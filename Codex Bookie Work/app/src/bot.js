@@ -494,6 +494,11 @@ async function confirmLiveExposure(orderId, selection) {
     if (hasOrder || hasPosition) {
       return { confirmed: true, attempt: attempt + 1, hasOrder, hasPosition };
     }
+    const directOrder = orderId ? await fetchOrderById(orderId).catch(() => null) : null;
+    const directState = String(directOrder?.state || "").toUpperCase();
+    if (directOrder && !["ORDER_STATE_CANCELED", "ORDER_STATE_CANCELLED", "ORDER_STATE_REJECTED", "ORDER_STATE_FAILED"].includes(directState)) {
+      return { confirmed: true, attempt: attempt + 1, hasOrder: false, hasPosition: false, hasDirectOrder: true, directState };
+    }
   }
   return { confirmed: false, attempts: 5 };
 }
@@ -746,6 +751,10 @@ async function createOrder(body) {
     throw new Error(`Create order failed ${res.status}: ${text}`);
   }
   return res.json();
+}
+
+async function fetchOrderById(orderId) {
+  return authedJson("GET", `/v1/order/${encodeURIComponent(orderId)}`);
 }
 
 async function cancelOrder(orderId, marketSlug) {
