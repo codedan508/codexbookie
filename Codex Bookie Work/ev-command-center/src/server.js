@@ -10,6 +10,7 @@ const HOST = process.env.HOST || "127.0.0.1";
 const PORT = Number(process.env.EV_COMMAND_CENTER_PORT || 2040);
 const MIN_GAMES = 50;
 const MAKER_APP_BASE = process.env.MAKER_APP_BASE || "http://127.0.0.1:2010";
+const ACTIVE_MONEYLINE_LABELS = new Set(["Home 50-55"]);
 
 const ATTACHED_APPS = [
   { id: "mlb-moneyline-start", name: "MLB Moneyline", authority: "MLB", oddsFeed: "Polymarket", snapshot: "game start", baseUrl: "http://127.0.0.1:2030" },
@@ -397,6 +398,7 @@ function extractCandidates(app, report) {
     .map((item) => normalizeCandidate(app, report, item))
     .filter((item) => {
       if (!item || item.games < MIN_GAMES || item.evPct <= 0) return false;
+      if (!isActiveCandidate(item)) return false;
       const key = `${app.id}|${item.label}|${item.games}|${item.evPct.toFixed(4)}`;
       if (seen.has(key)) return false;
       seen.add(key);
@@ -436,6 +438,13 @@ function normalizeCandidate(app, report, item) {
     liveStatus: item.liveStatus || "",
     pattern: item.pattern || ""
   };
+}
+
+function isActiveCandidate(item) {
+  if (item.appId === "mlb-moneyline-start") {
+    return ACTIVE_MONEYLINE_LABELS.has(item.label);
+  }
+  return true;
 }
 
 function opportunityScore(item) {
