@@ -1,0 +1,13 @@
+{
+  "name": "polymarket-mlb-maker-bot",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "3am ET Polymarket US MLB moneyline maker-order bot for validated price-pair bins.",
+  "scripts": {
+    "scan": "node src/bot.js --once",
+    "start": "node src/bot.js",
+    "ui": "node src/server.js",
+    "check": "node --check src/bot.js"
+  }
+}

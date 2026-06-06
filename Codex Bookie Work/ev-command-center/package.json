@@ -1,0 +1,10 @@
+{
+  "name": "ev-command-center",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "check": "node --check src/server.js"
+  }
+}

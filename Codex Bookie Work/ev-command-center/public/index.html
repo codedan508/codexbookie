@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EV Command Center</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Codex Bookie</p>
+        <h1>EV Command Center</h1>
+      </div>
+      <div class="actions">
+        <button id="refreshReports" type="button">Refresh Reports</button>
+        <button id="getDataAll" type="button">Run Get Data</button>
+        <button id="matchingBets" class="primary" type="button">Find Bets</button>
+      </div>
+    </header>
+
+    <section class="maker-panel">
+      <iframe id="bookieFrame" class="maker-frame" src="http://127.0.0.1:2010/" title="Codex Bookie"></iframe>
+    </section>
+
+    <section class="updated-band">
+      <div>
+        <span>updated</span>
+        <strong id="updatedAt">--</strong>
+      </div>
+    </section>
+
+    <section class="panel compact-matches">
+      <div class="section-head">
+        <h2>Matching Bets</h2>
+        <span id="matchCount">Not scanned</span>
+      </div>
+      <div id="matchGrid" class="match-grid">
+        <p class="empty">Click Find Bets to scan current MLB lines against the best-of-best list.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Best Of Best</h2>
+        <span id="ruleNote">50+ games minimum</span>
+      </div>
+      <div id="bestGrid" class="best-list"></div>
+    </section>
+
+    <section class="panel attached-panel">
+      <div class="section-head">
+        <h2>Attached Apps</h2>
+      </div>
+      <div id="appGrid" class="app-grid"></div>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>

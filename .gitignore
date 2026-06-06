@@ -1,0 +1,12 @@
+*.zip
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+logs/
+orders-state.json
+polymarket-mlb-maker-bot/orders-state.json
+Codex Bookie Work/app/logs/
+Codex Bookie Work/app/orders-state.json
+Codex Bookie Work/app/polymarket-mlb-maker-bot/orders-state.json

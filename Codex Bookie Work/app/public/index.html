@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sports Bookie</title>
+  <link rel="stylesheet" href="./styles.css?v=20260606-attachedapps2">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <h1>Codex Bookie</h1>
+      </div>
+      <button id="sellBetsButton" class="sell-status">
+        <strong>Trigger Safety</strong>
+        <span><i></i><b>BETS OFF</b></span>
+      </button>
+    </section>
+
+    <section class="layout">
+      <div class="left">
+        <section class="stats">
+          <label class="stat contract-stat">
+            <span>Contracts per offer</span>
+            <input id="contractsPerOrder" type="number" min="1" step="1">
+          </label>
+          <div class="stat">
+            <span>Account Total</span>
+            <strong id="accountTotal">--</strong>
+          </div>
+          <div class="stat">
+            <span>Open Positions</span>
+            <strong id="openPositions">--</strong>
+          </div>
+          <div class="stat">
+            <span>Pending Orders</span>
+            <strong id="pendingOrderTotal">--</strong>
+          </div>
+          <div class="stat">
+            <span>Open Cash</span>
+            <strong id="openCash">--</strong>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Orders Placed</h2>
+            <div class="panel-actions">
+              <button id="refreshAccount" class="mini-refresh" type="button">Refresh</button>
+              <span id="ordersCount">0 recorded</span>
+            </div>
+          </div>
+          <pre id="orders"></pre>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Positions</h2>
+            <span id="positionsStatus">Not loaded</span>
+          </div>
+          <pre id="positions">Positions view will populate after order/position API wiring is confirmed.</pre>
+        </section>
+      </div>
+
+      <aside class="right">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Matching Bets</h2>
+            <span id="slateStatus">Loading</span>
+          </div>
+          <div class="terminal-screen">
+            <div id="mlbSlate" class="slate"></div>
+          </div>
+          <button id="scanNow" class="scan-now" disabled>Offer Bets</button>
+          <button id="scanNoBet" class="scan-no-bet" type="button">Scan No Bet</button>
+          <p id="offerResult" class="offer-result"></p>
+        </section>
+
+        <section class="panel ev-panel">
+          <div class="panel-head">
+            <h2>Manual Offers</h2>
+            <span id="evBinsStatus">0 active</span>
+          </div>
+          <div id="evBins" class="ev-bins"></div>
+          <div class="ev-add">
+            <div class="ev-add-row">
+              <select id="evSport">
+                <option value="mlb">MLB</option>
+                <option value="nba">NBA</option>
+                <option value="nfl">NFL</option>
+                <option value="nhl">NHL</option>
+              </select>
+              <select id="evType">
+                <option value="moneyline_home">Moneyline - Home</option>
+                <option value="moneyline_away">Moneyline - Away</option>
+                <option value="first_inning_run_yes">YRFI</option>
+                <option value="first_inning_run_no">NRFI</option>
+                <option value="totals_over_7pt5">Over 7.5</option>
+                <option value="totals_under_7pt5">Under 7.5</option>
+                <option value="totals_over_8pt5">Over 8.5</option>
+                <option value="totals_under_8pt5">Under 8.5</option>
+                <option value="totals_over_9pt5">Over 9.5</option>
+                <option value="totals_under_9pt5">Under 9.5</option>
+              </select>
+            </div>
+            <div class="ev-add-row compact">
+              <input id="evMin" type="number" min="1" max="99" placeholder="Min">
+              <input id="evMax" type="number" min="1" max="99" placeholder="Max">
+              <button id="addEvBin" type="button">Add</button>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="panel attached-apps">
+      <div class="panel-head">
+        <h2>Attached Apps</h2>
+        <span>Reports / data tools</span>
+      </div>
+      <div class="attached-grid">
+        <a class="attached-card" href="http://127.0.0.1:2030/" target="_blank" rel="noreferrer">
+          <strong>MLB Moneyline</strong>
+          <span>game start · MLB authority · Polymarket odds</span>
+        </a>
+        <a class="attached-card" href="http://127.0.0.1:2021/" target="_blank" rel="noreferrer">
+          <strong>YRFI / NRFI</strong>
+          <span>MLB authority · Polymarket odds</span>
+        </a>
+        <a class="attached-card" href="http://127.0.0.1:2032/" target="_blank" rel="noreferrer">
+          <strong>MLB Totals</strong>
+          <span>game start · MLB authority · Polymarket odds</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <script src="./app.js?v=20260606-attachedapps2"></script>
+</body>
+</html>

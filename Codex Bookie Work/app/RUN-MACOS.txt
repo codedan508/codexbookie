@@ -1,0 +1,9 @@
+Codex Bookie macOS Safe Copy
+
+1. Install Node.js LTS if needed.
+2. Open Terminal in this folder.
+3. Run: chmod +x ./start-macos.command
+4. Run: ./start-macos.command
+5. Open http://localhost:2010
+
+The live .env API credentials are included because this was requested as a full API safe copy.
