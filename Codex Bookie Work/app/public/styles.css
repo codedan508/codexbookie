@@ -588,27 +588,6 @@ pre {
   filter: drop-shadow(0 0 8px rgba(103, 255, 75, 0.95));
 }
 
-.skip-list {
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(83, 220, 255, 0.24);
-  color: rgba(215, 255, 244, 0.72);
-}
-
-.skip-list b {
-  display: block;
-  margin-bottom: 6px;
-  color: rgba(255, 236, 120, 0.88);
-}
-
-.skip-line {
-  margin-bottom: 6px;
-}
-
-.skip-line span {
-  color: rgba(255, 186, 102, 0.76);
-}
-
 .ev-panel {
   padding-bottom: 16px;
 }

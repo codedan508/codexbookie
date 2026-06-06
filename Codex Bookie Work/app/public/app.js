@@ -310,37 +310,23 @@ async function loadMatchesInner() {
   try {
     const body = await fetchJson(`/api/matching-bets?t=${Date.now()}`);
     const matches = body.matches || [];
-    const skipped = Array.isArray(body.skipped) ? body.skipped : [];
     const rawMatches = Number(body.rawMatches ?? matches.length);
     const hiddenLiveExposure = Number(body.hiddenLiveExposure || 0);
     const liveBucketSkipped = Number(body.liveBucketSkipped || 0);
     currentMatches = matches;
     els.slateStatus.textContent = formatMatchStatus(matches.length, rawMatches, hiddenLiveExposure, liveBucketSkipped);
     if (!matches.length) {
-      els.slate.innerHTML = `No matching bets found.${renderSkippedMatches(skipped)}`;
+      els.slate.textContent = "No matching bets found.";
       updateOfferButton();
       return;
     }
-    els.slate.innerHTML = `${matches.map(renderMatchLine).join("")}${renderSkippedMatches(skipped)}`;
+    els.slate.innerHTML = matches.map(renderMatchLine).join("");
     updateOfferButton();
   } catch (error) {
     els.slateStatus.textContent = "Offline";
     els.slate.textContent = cleanError(error);
     updateOfferButton();
   }
-}
-
-function renderSkippedMatches(skipped = []) {
-  const lines = skipped.slice(0, 10).map((item) => {
-    const match = item.match || {};
-    const title = match.eventTitle || match.marketQuestion || item.marketSlug || "Unknown market";
-    const label = match.criterionLabel ? ` · ${match.criterionLabel}` : "";
-    const reason = String(item.reason || "skipped").replaceAll("_", " ");
-    const live = Number.isFinite(Number(item.currentBidCents)) ? ` · live ${item.currentBidCents}c` : "";
-    const found = Number.isFinite(Number(item.foundPrice)) ? ` · found ${item.foundPrice}c` : Number.isFinite(Number(match.price)) ? ` · found ${match.price}c` : "";
-    return `<div class="skip-line">${escapeHtml(title)}${escapeHtml(label)}<br><span>${escapeHtml(reason)}${escapeHtml(found)}${escapeHtml(live)}</span></div>`;
-  });
-  return lines.length ? `<div class="skip-list"><b>Skipped</b>${lines.join("")}</div>` : "";
 }
 
 async function scanNoBet() {
