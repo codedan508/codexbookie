@@ -18,7 +18,8 @@ const els = {
   evMin: document.querySelector("#evMin"),
   evMax: document.querySelector("#evMax"),
   addEvBin: document.querySelector("#addEvBin"),
-  getReports: document.querySelector("#getReports")
+  getReports: document.querySelector("#getReports"),
+  attachedGrid: document.querySelector("#attachedGrid")
 };
 
 let settings = null;
@@ -341,12 +342,47 @@ async function getReports() {
   els.getReports.disabled = true;
   els.getReports.textContent = "Getting...";
   try {
-    await fetchJson("/api/refresh-reports", { method: "POST" });
+    const data = await fetchJson("/api/refresh-reports", { method: "POST" });
+    renderAttachedReports(data);
     await loadMatches();
   } finally {
     els.getReports.disabled = false;
     els.getReports.textContent = originalText;
   }
+}
+
+function renderAttachedReports(data = {}) {
+  const groups = Array.isArray(data.byApp) ? data.byApp : [];
+  const reports = Array.isArray(data.apps) ? data.apps : [];
+  if (!reports.length) return;
+  els.attachedGrid.innerHTML = reports.map((report) => {
+    const group = groups.find((item) => item.appId === report.app?.id);
+    return renderAttachedReport(report, group);
+  }).join("");
+}
+
+function renderAttachedReport(report, group) {
+  const app = report.app || {};
+  const best = Array.isArray(group?.best) ? group.best.slice(0, 3) : [];
+  const statusClass = report.status === "online" ? "online" : "offline";
+  return `
+    <article class="attached-card report-card">
+      <div class="attached-report-head">
+        <a href="${escapeAttr(app.baseUrl || "#")}" target="_blank" rel="noreferrer">${escapeHtml(app.name || "Attached App")}</a>
+        <span class="${statusClass}">${escapeHtml(report.status || "unknown")}</span>
+      </div>
+      <p>${escapeHtml(report.subtitle || app.snapshot || "report")}</p>
+      <dl>
+        <div><dt>rows</dt><dd>${escapeHtml(report.filledRows ?? "--")} / ${escapeHtml(report.rowCount || "--")}</dd></div>
+        <div><dt>last pull</dt><dd>${escapeHtml(formatReportDate(report.latestPullDate))}</dd></div>
+        <div><dt>missing</dt><dd>${escapeHtml(report.missingRows || 0)}</dd></div>
+        <div><dt>qualified</dt><dd>${escapeHtml(report.candidateCount || 0)}</dd></div>
+      </dl>
+      <div class="attached-best">
+        ${best.length ? best.map((item) => `<p><b>${escapeHtml(item.label)}</b><span>${escapeHtml(formatSignedPct(item.evPct))} EV · ${escapeHtml(item.gamesLabel || `${item.games || "--"}`)}</span></p>`).join("") : `<p><span>No qualified candidate.</span></p>`}
+      </div>
+    </article>
+  `;
 }
 
 function formatMatchStatus(available, rawMatches, hiddenLiveExposure, liveBucketSkipped = 0) {
@@ -447,6 +483,24 @@ function formatBid(value) {
 function formatMoneyCents(value) {
   const number = Number(value);
   return Number.isFinite(number) ? `$${(number / 100).toFixed(2)}` : "--";
+}
+
+function formatReportDate(value) {
+  if (!value) return "--";
+  const date = new Date(`${value}T00:00:00`);
+  if (!Number.isFinite(date.getTime())) return value;
+  return new Intl.DateTimeFormat("en-US", {
+    month: "2-digit",
+    day: "2-digit",
+    year: "numeric"
+  }).format(date);
+}
+
+function formatSignedPct(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "--";
+  const sign = number > 0 ? "+" : "";
+  return `${sign}${number.toFixed(2)}%`;
 }
 
 function formatCancelTime(value) {

@@ -777,6 +777,90 @@ pre {
   line-height: 1.15;
 }
 
+.attached-card.report-card {
+  gap: 8px;
+}
+
+.attached-report-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.attached-report-head a {
+  color: #d7fff4;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  text-shadow: 0 0 8px rgba(83, 220, 255, 0.32);
+}
+
+.attached-report-head span {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.attached-report-head .online {
+  color: var(--green);
+}
+
+.attached-report-head .offline {
+  color: var(--red);
+}
+
+.attached-card p {
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.attached-card dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  margin: 0;
+}
+
+.attached-card dl div {
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid rgba(62, 109, 255, 0.28);
+  background: rgba(36, 76, 255, 0.08);
+}
+
+.attached-card dt {
+  color: var(--text-soft);
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.attached-card dd {
+  margin: 2px 0 0;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.attached-best {
+  display: grid;
+  gap: 4px;
+}
+
+.attached-best p {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.attached-best b {
+  color: #d7fff4;
+  font-size: 11px;
+}
+
 @media (max-width: 1060px) {
   .layout {
     grid-template-columns: 1fr;
