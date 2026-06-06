@@ -364,7 +364,7 @@ function renderAttachedReports(data = {}) {
 
 function renderAttachedReport(report, group) {
   const app = report.app || {};
-  const best = Array.isArray(group?.best) ? group.best.slice(0, 3) : [];
+  const best = Array.isArray(group?.best) ? group.best.slice(0, 5) : [];
   const statusClass = report.status === "online" ? "online" : "offline";
   return `
     <article class="attached-card report-card">

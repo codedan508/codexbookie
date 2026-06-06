@@ -80,7 +80,7 @@ async function dashboard() {
       appName: report.app.name,
       snapshot: report.app.snapshot,
       status: report.status,
-      best: report.candidates.slice().sort(compareCandidates).slice(0, 3)
+      best: report.candidates.slice().sort(compareCandidates).slice(0, 5)
     }))
   };
 }
