@@ -199,6 +199,19 @@ function compareSystemMatches(a, b) {
 
 function candidateToCriteria(item) {
   const label = String(item.label || "");
+  if (item.appId === "mlb-totals-start" && item.sourceModel === "score-truth") {
+    const line = Number(item.line ?? item.totalLine);
+    const maxPrice = Number(item.maxPrice);
+    if (!item.side || !Number.isFinite(line) || !Number.isFinite(maxPrice)) return null;
+    return {
+      type: "totals",
+      side: titleCase(item.side),
+      line,
+      maxPrice,
+      source: item
+    };
+  }
+
   const bucket = label.match(/(\d+)-(\d+)/);
   if (!bucket) return null;
   const low = Number(bucket[1]);
@@ -290,7 +303,11 @@ function matchMarket(event, market, criterion) {
   const outcomeIndex = outcomeIndexFor(event, outcomes, criterion);
   if (outcomeIndex < 0) return null;
   const price = cleanCents(prices[outcomeIndex]);
-  if (!priceInBucket(price, criterion.low, criterion.high)) return null;
+  if (Number.isFinite(criterion.maxPrice)) {
+    if (!(price <= criterion.maxPrice)) return null;
+  } else if (!priceInBucket(price, criterion.low, criterion.high)) {
+    return null;
+  }
 
   const source = criterion.source;
   return {
@@ -312,7 +329,7 @@ function matchMarket(event, market, criterion) {
     displaySide: displaySide(criterion, outcomes[outcomeIndex]),
     line: criterion.line ?? market.line ?? "",
     price,
-    bucket: `${criterion.low}-${criterion.high}`,
+    bucket: Number.isFinite(criterion.maxPrice) ? `<=${criterion.maxPrice}c` : `${criterion.low}-${criterion.high}`,
     url: `https://polymarket.us/event/${event.slug || ""}`
   };
 }
@@ -435,6 +452,11 @@ function normalizeCandidate(app, report, item) {
     weeklyEvPct,
     monthlyEvPct,
     winsOverBreakEven: Number.isFinite(winsOverBreakEven) ? winsOverBreakEven : 0,
+    sourceModel: item.sourceModel || "",
+    side: item.side || "",
+    line: item.line ?? item.totalLine ?? "",
+    maxPrice: item.maxPrice ?? "",
+    fairCents: item.fairCents ?? "",
     liveStatus: item.liveStatus || "",
     pattern: item.pattern || ""
   };

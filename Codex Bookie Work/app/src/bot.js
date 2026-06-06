@@ -623,7 +623,10 @@ function candidateGatewaySlugs(match) {
     add(`astatc-${base}-yrfi`);
     addGatewayTeamAliases(`astatc-${base}-yrfi`, add);
   } else if (market === "totals" && Number.isFinite(line)) {
-    const base = raw.replace(/-over-under-\d+(?:\.\d+)?$/i, "").replace(/-totals-\d+(?:\.\d+)?$/i, "");
+    const base = raw
+      .replace(/-over-under-\d+(?:\.\d+)?$/i, "")
+      .replace(/-totals-\d+(?:\.\d+)?$/i, "")
+      .replace(/-total-\d+pt\d+$/i, "");
     add(`tsc-${base}-${formatTotalLineForSlug(line)}`);
     addGatewayTeamAliases(`tsc-${base}-${formatTotalLineForSlug(line)}`, add);
   }
@@ -641,6 +644,11 @@ function addGatewayTeamAliases(slug, add) {
 
 function foundBucket(match) {
   const raw = String(match?.bucket || match?.criterionLabel || "");
+  const capped = raw.match(/<=\s*(\d+(?:\.\d+)?)c?/i);
+  if (capped) {
+    const max = Number(capped[1]);
+    return Number.isFinite(max) ? { low: 1, high: max, inclusiveHigh: true } : null;
+  }
   const parsed = raw.match(/(\d+)-(\d+)/);
   if (!parsed) return null;
   const low = Number(parsed[1]);
@@ -649,7 +657,8 @@ function foundBucket(match) {
 }
 
 function priceInFoundBucket(price, bucket) {
-  return Number.isFinite(price) && price >= bucket.low && price < bucket.high;
+  if (!Number.isFinite(price) || !bucket) return false;
+  return bucket.inclusiveHigh ? price >= bucket.low && price <= bucket.high : price >= bucket.low && price < bucket.high;
 }
 
 function targetForFoundMatch(market, match) {
