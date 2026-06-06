@@ -44,6 +44,7 @@ const server = http.createServer(async (req, res) => {
           counts[item.reason || "skipped"] = (counts[item.reason || "skipped"] || 0) + 1;
           return counts;
         }, {}),
+        skipped: validated.skipped,
         matches: validated.matches
       });
     }

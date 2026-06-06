@@ -278,6 +278,9 @@ async function offerBets() {
 function renderOfferResult(result, state = {}) {
   const requested = Number(result.requestedMatches || currentMatches.length || 0);
   const accepted = Array.isArray(result.placed) ? result.placed.length : 0;
+  const confirmed = (result.placed || []).filter((item) => item.confirmation?.confirmed && !item.confirmation?.confirmationPending).length;
+  const pending = (result.placed || []).filter((item) => item.confirmation?.confirmationPending).length;
+  const unconfirmed = (result.placed || []).filter((item) => item.confirmation && !item.confirmation.confirmed).length;
   const skipped = Array.isArray(result.skipped) ? result.skipped.length : 0;
   const liveOpen = Array.isArray(state.openOrdersLive) ? state.openOrdersLive.length : null;
   const reasons = {};
@@ -287,7 +290,8 @@ function renderOfferResult(result, state = {}) {
   const reasonText = Object.entries(reasons)
     .map(([reason, count]) => `${count} ${reason.replaceAll("_", " ")}`)
     .join(" · ");
-  els.offerResult.textContent = `Last offer: ${requested} requested · ${accepted} accepted · ${skipped} skipped${liveOpen == null ? "" : ` · ${liveOpen} live open`}${reasonText ? ` (${reasonText})` : ""}`;
+  const verifyText = accepted ? ` · ${confirmed} confirmed${pending ? ` · ${pending} pending` : ""}${unconfirmed ? ` · ${unconfirmed} unconfirmed` : ""}` : "";
+  els.offerResult.textContent = `Last offer: ${requested} requested · ${accepted} accepted${verifyText} · ${skipped} skipped${liveOpen == null ? "" : ` · ${liveOpen} live open`}${reasonText ? ` (${reasonText})` : ""}`;
 }
 
 async function loadMatches() {
@@ -306,23 +310,37 @@ async function loadMatchesInner() {
   try {
     const body = await fetchJson(`/api/matching-bets?t=${Date.now()}`);
     const matches = body.matches || [];
+    const skipped = Array.isArray(body.skipped) ? body.skipped : [];
     const rawMatches = Number(body.rawMatches ?? matches.length);
     const hiddenLiveExposure = Number(body.hiddenLiveExposure || 0);
     const liveBucketSkipped = Number(body.liveBucketSkipped || 0);
     currentMatches = matches;
     els.slateStatus.textContent = formatMatchStatus(matches.length, rawMatches, hiddenLiveExposure, liveBucketSkipped);
     if (!matches.length) {
-      els.slate.textContent = "No matching bets found.";
+      els.slate.innerHTML = `No matching bets found.${renderSkippedMatches(skipped)}`;
       updateOfferButton();
       return;
     }
-    els.slate.innerHTML = matches.map(renderMatchLine).join("");
+    els.slate.innerHTML = `${matches.map(renderMatchLine).join("")}${renderSkippedMatches(skipped)}`;
     updateOfferButton();
   } catch (error) {
     els.slateStatus.textContent = "Offline";
     els.slate.textContent = cleanError(error);
     updateOfferButton();
   }
+}
+
+function renderSkippedMatches(skipped = []) {
+  const lines = skipped.slice(0, 10).map((item) => {
+    const match = item.match || {};
+    const title = match.eventTitle || match.marketQuestion || item.marketSlug || "Unknown market";
+    const label = match.criterionLabel ? ` · ${match.criterionLabel}` : "";
+    const reason = String(item.reason || "skipped").replaceAll("_", " ");
+    const live = Number.isFinite(Number(item.currentBidCents)) ? ` · live ${item.currentBidCents}c` : "";
+    const found = Number.isFinite(Number(item.foundPrice)) ? ` · found ${item.foundPrice}c` : Number.isFinite(Number(match.price)) ? ` · found ${match.price}c` : "";
+    return `<div class="skip-line">${escapeHtml(title)}${escapeHtml(label)}<br><span>${escapeHtml(reason)}${escapeHtml(found)}${escapeHtml(live)}</span></div>`;
+  });
+  return lines.length ? `<div class="skip-list"><b>Skipped</b>${lines.join("")}</div>` : "";
 }
 
 async function scanNoBet() {
