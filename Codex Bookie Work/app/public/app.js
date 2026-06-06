@@ -303,18 +303,15 @@ async function loadMatches() {
 }
 
 async function loadMatchesInner() {
-  els.slateStatus.textContent = "Loading";
+  els.slateStatus.textContent = "";
   els.slate.innerHTML = "";
   currentMatches = [];
   updateOfferButton();
   try {
     const body = await fetchJson(`/api/matching-bets?t=${Date.now()}`);
     const matches = body.matches || [];
-    const rawMatches = Number(body.rawMatches ?? matches.length);
-    const hiddenLiveExposure = Number(body.hiddenLiveExposure || 0);
-    const liveBucketSkipped = Number(body.liveBucketSkipped || 0);
     currentMatches = matches;
-    els.slateStatus.textContent = formatMatchStatus(matches.length, rawMatches, hiddenLiveExposure, liveBucketSkipped);
+    els.slateStatus.textContent = "";
     if (!matches.length) {
       els.slate.textContent = "No matching bets found.";
       updateOfferButton();
@@ -323,7 +320,7 @@ async function loadMatchesInner() {
     els.slate.innerHTML = matches.map(renderMatchLine).join("");
     updateOfferButton();
   } catch (error) {
-    els.slateStatus.textContent = "Offline";
+    els.slateStatus.textContent = "";
     els.slate.textContent = cleanError(error);
     updateOfferButton();
   }
@@ -406,16 +403,6 @@ function formatCandidateAction(item = {}) {
   if (moneyline) return `Take ${titleCase(moneyline[1])} team at ${moneyline[2]}c`;
 
   return label;
-}
-
-function formatMatchStatus(available, rawMatches, hiddenLiveExposure, liveBucketSkipped = 0) {
-  if (liveBucketSkipped > 0) {
-    return `${available} live · ${liveBucketSkipped} moved · ${hiddenLiveExposure} already open`;
-  }
-  if (hiddenLiveExposure > 0) {
-    return `${available} available · ${hiddenLiveExposure} already open`;
-  }
-  return `${available} found`;
 }
 
 function updateOfferButton() {
