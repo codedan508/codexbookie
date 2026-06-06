@@ -17,7 +17,8 @@ const els = {
   evType: document.querySelector("#evType"),
   evMin: document.querySelector("#evMin"),
   evMax: document.querySelector("#evMax"),
-  addEvBin: document.querySelector("#addEvBin")
+  addEvBin: document.querySelector("#addEvBin"),
+  getReports: document.querySelector("#getReports")
 };
 
 let settings = null;
@@ -35,6 +36,7 @@ async function init() {
   els.scanNow.addEventListener("click", offerBets);
   els.refreshAccount.addEventListener("click", refreshAccount);
   els.addEvBin.addEventListener("click", addEvBin);
+  els.getReports.addEventListener("click", getReports);
 }
 
 async function loadState(options = {}) {
@@ -331,6 +333,19 @@ async function scanNoBet() {
   } finally {
     els.scanNoBet.disabled = false;
     els.scanNoBet.textContent = originalText;
+  }
+}
+
+async function getReports() {
+  const originalText = els.getReports.textContent;
+  els.getReports.disabled = true;
+  els.getReports.textContent = "Getting...";
+  try {
+    await fetchJson("/api/refresh-reports", { method: "POST" });
+    await loadMatches();
+  } finally {
+    els.getReports.disabled = false;
+    els.getReports.textContent = originalText;
   }
 }
 

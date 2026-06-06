@@ -47,6 +47,10 @@ const server = http.createServer(async (req, res) => {
         matches: validated.matches
       });
     }
+    if (req.method === "POST" && url.pathname === "/api/refresh-reports") {
+      const result = await fetchJson(`${commandCenterBase}/api/refresh-reports`, { method: "POST", timeoutMs: 60_000 });
+      return json(res, 200, result);
+    }
     if (req.method === "POST" && url.pathname === "/api/settings") {
       const state = await readState();
       const body = await readJson(req);
