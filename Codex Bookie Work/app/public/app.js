@@ -30,7 +30,6 @@ let currentMatches = [];
 init();
 
 async function init() {
-  await loadState();
   els.contracts.addEventListener("change", saveSettings);
   els.sellBets.addEventListener("click", toggleSellBets);
   els.scanNoBet.addEventListener("click", scanNoBet);
@@ -38,6 +37,8 @@ async function init() {
   els.refreshAccount.addEventListener("click", refreshAccount);
   els.addEvBin.addEventListener("click", addEvBin);
   els.getReports.addEventListener("click", getReports);
+  await loadState();
+  await getReports();
 }
 
 async function loadState(options = {}) {
@@ -379,10 +380,28 @@ function renderAttachedReport(report, group) {
         <div><dt>qualified</dt><dd>${escapeHtml(report.candidateCount || 0)}</dd></div>
       </dl>
       <div class="attached-best">
-        ${best.length ? best.map((item) => `<p><b>${escapeHtml(item.label)}</b><span>${escapeHtml(formatSignedPct(item.evPct))} EV · ${escapeHtml(item.gamesLabel || `${item.games || "--"}`)}</span></p>`).join("") : `<p><span>No qualified candidate.</span></p>`}
+        ${best.length ? best.map((item) => `<p><b>${escapeHtml(formatCandidateAction(item))}</b><span>${escapeHtml(formatSignedPct(item.evPct))} EV · ${escapeHtml(item.gamesLabel || `${item.games || "--"}`)}</span></p>`).join("") : `<p><span>No qualified candidate.</span></p>`}
       </div>
     </article>
   `;
+}
+
+function formatCandidateAction(item = {}) {
+  const label = String(item.label || "");
+  const totalCap = label.match(/\b(Over|Under)\s+(\d+(?:\.\d+)?)\s+<=\s*(\d+(?:\.\d+)?)c/i);
+  if (totalCap) return `Take ${titleCase(totalCap[1])} ${totalCap[2]} at ${totalCap[3]}c or less`;
+
+  const yrfiPair = label.match(/\bYes\s+(\d+-\d+)\s+\/\s+No\s+(\d+-\d+)/i);
+  if (yrfiPair) {
+    const side = Number(item.wins || 0) >= Number(item.losses || 0) ? "YRFI" : "NRFI";
+    const bucket = side === "YRFI" ? yrfiPair[1] : yrfiPair[2];
+    return `Take ${side}: ${side === "YRFI" ? "Yes" : "No"} price ${bucket}c`;
+  }
+
+  const moneyline = label.match(/\b(Home|Away)\s+(\d+-\d+)/i);
+  if (moneyline) return `Take ${titleCase(moneyline[1])} team at ${moneyline[2]}c`;
+
+  return label;
 }
 
 function formatMatchStatus(available, rawMatches, hiddenLiveExposure, liveBucketSkipped = 0) {
@@ -501,6 +520,11 @@ function formatSignedPct(value) {
   if (!Number.isFinite(number)) return "--";
   const sign = number > 0 ? "+" : "";
   return `${sign}${number.toFixed(2)}%`;
+}
+
+function titleCase(value) {
+  const text = String(value || "").toLowerCase();
+  return text ? text[0].toUpperCase() + text.slice(1) : "";
 }
 
 function formatCancelTime(value) {
