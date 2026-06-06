@@ -496,7 +496,7 @@ async function confirmLiveExposure(orderId, selection) {
     }
     const directOrder = orderId ? await fetchOrderById(orderId).catch(() => null) : null;
     const directState = String(directOrder?.state || "").toUpperCase();
-    if (directOrder && !["ORDER_STATE_CANCELED", "ORDER_STATE_CANCELLED", "ORDER_STATE_REJECTED", "ORDER_STATE_FAILED"].includes(directState)) {
+    if (directState && !["ORDER_STATE_CANCELED", "ORDER_STATE_CANCELLED", "ORDER_STATE_REJECTED", "ORDER_STATE_FAILED"].includes(directState)) {
       return { confirmed: true, attempt: attempt + 1, hasOrder: false, hasPosition: false, hasDirectOrder: true, directState };
     }
   }
@@ -695,7 +695,7 @@ function targetForFoundMatch(market, match) {
 
 function buildMakerOrder(selection) {
   const limitCents = Math.max(1, Math.min(99, Math.round(selection.makerBidCents)));
-  const price = limitCents / 100;
+  const price = selection.target.long ? limitCents / 100 : (100 - limitCents) / 100;
   const quantity = config.contractsPerOrder;
   const intent = selection.target.long ? "ORDER_INTENT_BUY_LONG" : "ORDER_INTENT_BUY_SHORT";
   const goodTillTime = goodTillTimeForSelection(selection);
@@ -754,7 +754,8 @@ async function createOrder(body) {
 }
 
 async function fetchOrderById(orderId) {
-  return authedJson("GET", `/v1/order/${encodeURIComponent(orderId)}`);
+  const body = await authedJson("GET", `/v1/order/${encodeURIComponent(orderId)}`);
+  return body.order || body;
 }
 
 async function cancelOrder(orderId, marketSlug) {
