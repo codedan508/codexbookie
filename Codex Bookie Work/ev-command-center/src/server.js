@@ -11,6 +11,8 @@ const HOST = process.env.HOST || "localhost";
 const PORT = Number(process.env.EV_COMMAND_CENTER_PORT || 2040);
 const MIN_GAMES = 50;
 const MIN_BUY_PRICE_CENTS = 30;
+const MIN_SEASON_EV_PCT = 5;
+const MIN_CONFIRM_EV_PCT = 5;
 const MAKER_APP_BASE = process.env.MAKER_APP_BASE || "http://localhost:2010";
 
 
@@ -112,9 +114,9 @@ async function dashboard() {
     appName: report.app.name,
     snapshot: report.app.snapshot,
     status: report.status,
-    best: report.candidates.slice().sort(compareCandidates).slice(0, 5)
+    best: report.candidates.slice().sort(compareSeasonEvCandidates).slice(0, 5)
   }));
-  const candidates = byApp.flatMap((group) => group.best).sort(compareCandidates);
+  const candidates = byApp.flatMap((group) => group.best).sort(compareSeasonEvCandidates);
   return {
     generatedAt: new Date().toISOString(),
     minGames: MIN_GAMES,
@@ -499,7 +501,7 @@ function extractCandidates(app, report) {
   return primary
     .map((item) => normalizeCandidate(app, report, item))
     .filter((item) => {
-      if (!item || item.games < MIN_GAMES || item.evPct <= 0) return false;
+      if (!item || item.games < MIN_GAMES || !passesEvConfirmation(item)) return false;
       if (!isActiveCandidate(item)) return false;
       const key = `${app.id}|${item.label}|${item.games}|${item.evPct.toFixed(4)}`;
       if (seen.has(key)) return false;
@@ -514,7 +516,7 @@ function extractDirectEngineCandidates(app, report) {
   const primary = Array.isArray(report.analysis?.opportunities) ? report.analysis.opportunities : [];
   return primary
     .map((item) => normalizeCandidate(app, report, item))
-    .filter((item) => item && item.games >= MIN_GAMES && item.evPct > 0)
+    .filter((item) => item && item.games >= MIN_GAMES && passesEvConfirmation(item) && isActiveCandidate(item))
     .map((item) => ({ ...item, score: opportunityScore(item) }))
     .sort(compareCandidates);
 }
@@ -565,11 +567,26 @@ function isActiveCandidate(item) {
   return candidateEntryPriceCents(item) >= MIN_BUY_PRICE_CENTS;
 }
 
+function passesEvConfirmation(item) {
+  const seasonEv = roundedEvForGate(item.evPct);
+  const weeklyEv = roundedEvForGate(item.weeklyEvPct);
+  const monthlyEv = roundedEvForGate(item.monthlyEvPct);
+  if (seasonEv == null || seasonEv < MIN_SEASON_EV_PCT) return false;
+  return (weeklyEv != null && weeklyEv >= MIN_CONFIRM_EV_PCT)
+    || (monthlyEv != null && monthlyEv >= MIN_CONFIRM_EV_PCT);
+}
+
+function roundedEvForGate(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? Math.round(number) : null;
+}
+
 function candidateEntryPriceCents(item = {}) {
-  const maxPrice = Number(item.maxPrice);
+  const maxPrice = item.maxPrice === "" || item.maxPrice == null ? NaN : Number(item.maxPrice);
   if (Number.isFinite(maxPrice)) return maxPrice;
 
-  const bucketMin = Number(item.bucketMin ?? item.yesBucketMin ?? item.noBucketMin);
+  const rawBucketMin = item.bucketMin ?? item.yesBucketMin ?? item.noBucketMin;
+  const bucketMin = rawBucketMin === "" || rawBucketMin == null ? NaN : Number(rawBucketMin);
   if (Number.isFinite(bucketMin)) return bucketMin;
 
   const text = String(item.label || item.pairLabel || item.key || item.bucket || "");
@@ -598,6 +615,19 @@ function compareCandidates(a, b) {
     || b.games - a.games
     || b.evPct - a.evPct
     || b.winsOverBreakEven - a.winsOverBreakEven;
+}
+
+function compareSeasonEvCandidates(a, b) {
+  return b.evPct - a.evPct
+    || sortableEv(b.weeklyEvPct) - sortableEv(a.weeklyEvPct)
+    || sortableEv(b.monthlyEvPct) - sortableEv(a.monthlyEvPct)
+    || b.games - a.games
+    || b.winsOverBreakEven - a.winsOverBreakEven;
+}
+
+function sortableEv(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : -9999;
 }
 
 async function runGetDataAll() {
