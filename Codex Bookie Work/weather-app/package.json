@@ -1,0 +1,18 @@
+{
+  "name": "kalshi-scanner",
+  "version": "1.0.0",
+  "description": "Small Kalshi market scanner and text recorder.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "scan": "node scanner-recorder.mjs",
+    "start": "node server.js",
+    "test": "node --check server.js && node --check scanner-recorder.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

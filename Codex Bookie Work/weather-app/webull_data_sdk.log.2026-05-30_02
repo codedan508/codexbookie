@@ -1,0 +1,36 @@
+8505841856 2026-05-30 02:12:24,839 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 02:13:00,051 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 02:37:46,667 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 02:38:01,808 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 02:41:45,107 webull.core.client ERROR HttpError occurred. Host:us-openapi-alb.uat.webullbroker.com SDK-Version:2.0.8 Request:{
+  "_version": "v2",
+  "_action_name": "/openapi/config",
+  "_protocol_type": "https",
+  "_accept_format": "JSON",
+  "_params": {},
+  "_method": "GET",
+  "_header": {
+    "x-version": "v2",
+    "Accept-Encoding": "gzip",
+    "x-app-key": "a88f2efed4dca02b9bc1a3cecbc35dba",
+    "x-timestamp": "2026-05-30T06:41:45Z",
+    "x-signature-version": "1.0",
+    "x-signature-algorithm": "HMAC-SHA1",
+    "x-signature-nonce": "bc5951ce-6fdf-541c-844f-2d7e346421d0",
+    "x-signature": "DZ+T1qXCpq8YrLeBH0+WN+U6o8w=",
+    "User-Agent": "WebullApiSDK (Darwin 25.4.0;arm64) Python/3.9.6 Core/2.0.8 python-requests/2.32.5",
+    "x-webull-client-source": "sdk"
+  },
+  "_body_params": null,
+  "_uri_pattern": null,
+  "_uri_params": null,
+  "_content": null,
+  "_extra_user_agent": {},
+  "string_to_sign": "",
+  "_request_connect_timeout": null,
+  "_request_read_timeout": null,
+  "endpoint": "us-openapi-alb.uat.webullbroker.com",
+  "_signer_spec": "<module 'webull.core.auth.algorithm.sha_hmac1' from '/Users/dan/Documents/OCD Treatment Center/Prediction Weather/.venv/lib/python3.9/site-packages/webull/core/auth/algorithm/sha_hmac1.py'>"
+} ClientException:SDK.HttpError HTTPSConnectionPool(host='us-openapi-alb.uat.webullbroker.com', port=443): Max retries exceeded with url: /openapi/config (Caused by NameResolutionError("HTTPSConnection(host='us-openapi-alb.uat.webullbroker.com', port=443): Failed to resolve 'us-openapi-alb.uat.webullbroker.com' ([Errno 8] nodename nor servname provided, or not known)"))
+8505841856 2026-05-30 02:42:02,776 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 02:43:57,209 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False

@@ -1,0 +1,159 @@
+8505841856 2026-05-30 08:59:12,307 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 09:04:24,906 webull.core.client ERROR HttpError occurred. Host:us-openapi-alb.uat.webullbroker.com SDK-Version:2.0.8 Request:{
+  "_version": "v2",
+  "_action_name": "/openapi/instrument/event/market/list",
+  "_protocol_type": "https",
+  "_accept_format": "JSON",
+  "_params": {
+    "series_symbol": "KXHIGHTATL",
+    "page_size": 100
+  },
+  "_method": "GET",
+  "_header": {
+    "x-version": "v2",
+    "Accept-Encoding": "gzip",
+    "x-app-key": "a88f2efed4dca02b9bc1a3cecbc35dba",
+    "x-timestamp": "2026-05-30T12:59:31Z",
+    "x-signature-version": "1.0",
+    "x-signature-algorithm": "HMAC-SHA1",
+    "x-signature-nonce": "e7553201-2354-5519-9b6f-f39c5160b0a5",
+    "x-signature": "hYkqbNBj9UDwvbeoijh0WrushnI=",
+    "User-Agent": "WebullApiSDK (Darwin 25.4.0;arm64) Python/3.9.6 Core/2.0.8 python-requests/2.32.5",
+    "x-webull-client-source": "sdk"
+  },
+  "_body_params": null,
+  "_uri_pattern": null,
+  "_uri_params": null,
+  "_content": null,
+  "_extra_user_agent": {},
+  "string_to_sign": "",
+  "_request_connect_timeout": null,
+  "_request_read_timeout": null,
+  "endpoint": "us-openapi-alb.uat.webullbroker.com",
+  "_signer_spec": "<module 'webull.core.auth.algorithm.sha_hmac1' from '/Users/dan/Documents/OCD Treatment Center/Prediction Weather/.venv/lib/python3.9/site-packages/webull/core/auth/algorithm/sha_hmac1.py'>"
+} ClientException:SDK.HttpError ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+8505841856 2026-05-30 09:04:33,029 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 09:21:16,787 webull.core.client ERROR HttpError occurred. Host:us-openapi-alb.uat.webullbroker.com SDK-Version:2.0.8 Request:{
+  "_version": "v2",
+  "_action_name": "/openapi/instrument/event/market/list",
+  "_protocol_type": "https",
+  "_accept_format": "JSON",
+  "_params": {
+    "series_symbol": "KXHIGHTSEA",
+    "page_size": 100
+  },
+  "_method": "GET",
+  "_header": {
+    "x-version": "v2",
+    "Accept-Encoding": "gzip",
+    "x-app-key": "a88f2efed4dca02b9bc1a3cecbc35dba",
+    "x-timestamp": "2026-05-30T13:04:50Z",
+    "x-signature-version": "1.0",
+    "x-signature-algorithm": "HMAC-SHA1",
+    "x-signature-nonce": "25682ee1-2d7b-5af9-bc56-e1eb4ed89d72",
+    "x-signature": "RPBzufvcD8XneTLBjBgNnwQZiq8=",
+    "User-Agent": "WebullApiSDK (Darwin 25.4.0;arm64) Python/3.9.6 Core/2.0.8 python-requests/2.32.5",
+    "x-webull-client-source": "sdk"
+  },
+  "_body_params": null,
+  "_uri_pattern": null,
+  "_uri_params": null,
+  "_content": null,
+  "_extra_user_agent": {},
+  "string_to_sign": "",
+  "_request_connect_timeout": null,
+  "_request_read_timeout": null,
+  "endpoint": "us-openapi-alb.uat.webullbroker.com",
+  "_signer_spec": "<module 'webull.core.auth.algorithm.sha_hmac1' from '/Users/dan/Documents/OCD Treatment Center/Prediction Weather/.venv/lib/python3.9/site-packages/webull/core/auth/algorithm/sha_hmac1.py'>"
+} ClientException:SDK.HttpError ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+8505841856 2026-05-30 10:00:13,215 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 10:01:01,043 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 10:17:44,428 webull.core.client ERROR HttpError occurred. Host:us-openapi-alb.uat.webullbroker.com SDK-Version:2.0.8 Request:{
+  "_version": "v2",
+  "_action_name": "/openapi/instrument/event/market/list",
+  "_protocol_type": "https",
+  "_accept_format": "JSON",
+  "_params": {
+    "series_symbol": "KXHIGHTMIN",
+    "page_size": 100
+  },
+  "_method": "GET",
+  "_header": {
+    "x-version": "v2",
+    "Accept-Encoding": "gzip",
+    "x-app-key": "a88f2efed4dca02b9bc1a3cecbc35dba",
+    "x-timestamp": "2026-05-30T14:01:30Z",
+    "x-signature-version": "1.0",
+    "x-signature-algorithm": "HMAC-SHA1",
+    "x-signature-nonce": "be7f2e60-4ded-56de-a2c8-eece6645e479",
+    "x-signature": "oz5u+vq0gzqnApMfUMFkdKxeYQ4=",
+    "User-Agent": "WebullApiSDK (Darwin 25.4.0;arm64) Python/3.9.6 Core/2.0.8 python-requests/2.32.5",
+    "x-webull-client-source": "sdk"
+  },
+  "_body_params": null,
+  "_uri_pattern": null,
+  "_uri_params": null,
+  "_content": null,
+  "_extra_user_agent": {},
+  "string_to_sign": "",
+  "_request_connect_timeout": null,
+  "_request_read_timeout": null,
+  "endpoint": "us-openapi-alb.uat.webullbroker.com",
+  "_signer_spec": "<module 'webull.core.auth.algorithm.sha_hmac1' from '/Users/dan/Documents/OCD Treatment Center/Prediction Weather/.venv/lib/python3.9/site-packages/webull/core/auth/algorithm/sha_hmac1.py'>"
+} ClientException:SDK.HttpError ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+8505841856 2026-05-30 10:33:52,643 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 10:50:28,213 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:25:31,877 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:26:58,443 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:27:42,582 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:28:51,662 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:34:50,960 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:40:53,603 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:41:35,307 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:42:20,880 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:48:19,400 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:49:07,456 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:49:50,000 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:50:35,724 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:56:34,732 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:57:18,161 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 11:58:03,786 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:04:01,685 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:04:45,849 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:09:16,137 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:15:19,701 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:16:00,501 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:21:57,701 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:22:43,730 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:28:40,437 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:29:24,997 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:35:25,450 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:36:08,232 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:36:53,668 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:42:19,518 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:44:44,731 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 12:54:48,731 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:00:07,317 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:00:50,956 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:06:06,010 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:11:26,402 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:12:11,249 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:17:27,991 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:22:40,230 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:23:43,144 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:28:58,188 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:34:12,217 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:39:27,859 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:44:42,752 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:49:59,437 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 13:55:12,654 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:00:21,876 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:05:33,707 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:10:44,669 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:15:54,004 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:26:31,286 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:31:39,664 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:36:48,838 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:41:58,518 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:47:08,215 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 14:52:17,101 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False

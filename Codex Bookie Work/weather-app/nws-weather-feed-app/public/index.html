@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NWS Weather Dashboard</title>
+    <link rel="stylesheet" href="/styles.css?v=datasetcontrols">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="top">
+        <div>
+          <p class="eyebrow">NWS Base Layer</p>
+          <h1>Weather Dashboard</h1>
+        </div>
+        <div class="actions">
+          <button id="refreshCurrent" type="button">Refresh NWS</button>
+          <button id="runHistory" type="button">Update Data</button>
+        </div>
+      </header>
+
+      <section class="status-row">
+        <div><span id="liveStatus">waiting</span><small>stations</small></div>
+        <div><span id="historyStatus">not built</span><small>Data Last Update</small></div>
+      </section>
+
+      <section class="panel primary-panel">
+        <div class="panel-head">
+          <div>
+            <h2>Primary Polymarket Weather Markets</h2>
+            <p id="liveMeta">San Francisco, Los Angeles, Miami, New York, Chicago.</p>
+          </div>
+        </div>
+        <div id="primaryWeatherGrid" class="primary-weather-grid"></div>
+      </section>
+
+      <section class="panel ev-panel">
+        <div class="panel-head compact-head">
+          <div>
+            <h2>Price Bucket EV</h2>
+            <p id="evMeta">Waiting for weather history data.</p>
+          </div>
+          <button id="refreshEv" type="button">Refresh EV</button>
+        </div>
+        <div id="evTable" class="ev-table empty">No EV data loaded.</div>
+        <div class="order-controls" aria-label="Weather order controls">
+          <div class="order-row">
+            <button id="placePolyYes" type="button">Place Polymarket YES Bets</button>
+            <select id="polyScope" aria-label="Polymarket YES scope">
+              <option value="general">General</option>
+              <option value="time">Time</option>
+              <option value="location">Location</option>
+            </select>
+          </div>
+          <div class="order-row">
+            <button id="placeKalshiYes" type="button">Place Kalshi YES Bets</button>
+            <select id="kalshiYesScope" aria-label="Kalshi YES scope">
+              <option value="general">General</option>
+              <option value="time">Time</option>
+              <option value="location">Location</option>
+            </select>
+          </div>
+          <div class="order-row">
+            <button id="placeKalshiShort" type="button">Place Kalshi SHORT Bets</button>
+            <select id="kalshiShortScope" aria-label="Kalshi SHORT scope">
+              <option value="general">General</option>
+              <option value="time">Time</option>
+              <option value="location">Location</option>
+            </select>
+          </div>
+          <p id="orderStatus" class="order-status">No order run yet.</p>
+        </div>
+        <div class="dataset-controls" aria-label="Dataset controls">
+          <button id="createCsv" type="button">Create CSV</button>
+          <button id="backupCsv" type="button">Make Backup Copy</button>
+          <p id="datasetStatus" class="order-status">Datasets update in place by city/time.</p>
+        </div>
+      </section>
+
+      <section class="panel secondary-panel">
+        <div class="panel-head compact-head">
+          <div>
+            <h2>Other Weather Feeds</h2>
+            <p>Compact watchlist for later cross-market scans.</p>
+          </div>
+        </div>
+        <div id="secondaryWeatherGrid" class="secondary-weather-grid"></div>
+      </section>
+
+    </main>
+    <script src="/app.js?v=snapshotall1780913000"></script>
+  </body>
+</html>

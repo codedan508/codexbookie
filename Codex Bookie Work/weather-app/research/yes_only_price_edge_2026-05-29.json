@@ -1,0 +1,1801 @@
+{
+  "settlement_proxy": {
+    "2": {
+      "avg": 73600,
+      "last": 73600,
+      "max": 73600,
+      "min": 73600,
+      "n": 138
+    },
+    "3": {
+      "avg": 73698.5243902439,
+      "last": 73900,
+      "max": 73900,
+      "min": 73650,
+      "n": 82
+    },
+    "12": {
+      "avg": 73308.578125,
+      "last": 71500,
+      "max": 73744,
+      "min": 71500,
+      "n": 128
+    },
+    "19": {
+      "avg": 73400,
+      "last": 73400,
+      "max": 73400,
+      "min": 73400,
+      "n": 121
+    }
+  },
+  "top_rules": [
+    {
+      "avg_net_cents": 22.060185185185187,
+      "avg_yes_price": 76.61111111111111,
+      "breakeven": 0.7793981481481481,
+      "bucket": "overnight",
+      "count": 54,
+      "distance_min": 25,
+      "hours": {
+        "2": 44,
+        "3": 10
+      },
+      "lift": 0.2830412830412832,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": 20.59090909090909,
+      "avg_yes_price": 76.25454545454545,
+      "breakeven": 0.7759090909090909,
+      "bucket": "overnight",
+      "count": 55,
+      "distance_min": 10,
+      "hours": {
+        "2": 44,
+        "3": 11
+      },
+      "lift": 0.26537785588752194,
+      "unique": 3,
+      "win_rate": 0.9818181818181818,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": 18.964285714285715,
+      "avg_yes_price": 79.84693877551021,
+      "breakeven": 0.8103571428571429,
+      "bucket": "overnight",
+      "count": 98,
+      "distance_min": 25,
+      "hours": {
+        "2": 74,
+        "3": 24
+      },
+      "lift": 0.23402379903040993,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": 18.17929292929293,
+      "avg_yes_price": 79.61616161616162,
+      "breakeven": 0.8081060606060606,
+      "bucket": "overnight",
+      "count": 99,
+      "distance_min": 10,
+      "hours": {
+        "2": 74,
+        "3": 25
+      },
+      "lift": 0.2249617199462517,
+      "unique": 3,
+      "win_rate": 0.98989898989899,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": 16.29741379310345,
+      "avg_yes_price": 82.62068965517241,
+      "breakeven": 0.8370258620689655,
+      "bucket": "overnight",
+      "count": 58,
+      "distance_min": 50,
+      "hours": {
+        "2": 46,
+        "3": 12
+      },
+      "lift": 0.19470621556207846,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": 15.42512077294686,
+      "avg_yes_price": 83.487922705314,
+      "breakeven": 0.8457487922705313,
+      "bucket": "overnight",
+      "count": 207,
+      "distance_min": 25,
+      "hours": {
+        "2": 83,
+        "3": 124
+      },
+      "lift": 0.18238418918147037,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": 15.068509615384615,
+      "avg_yes_price": 83.36057692307692,
+      "breakeven": 0.8445072115384615,
+      "bucket": "overnight",
+      "count": 208,
+      "distance_min": 10,
+      "hours": {
+        "2": 83,
+        "3": 125
+      },
+      "lift": 0.17842961444857175,
+      "unique": 3,
+      "win_rate": 0.9951923076923077,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": 14.566390041493776,
+      "avg_yes_price": 84.39419087136929,
+      "breakeven": 0.8543360995850622,
+      "bucket": "overnight",
+      "count": 241,
+      "distance_min": 25,
+      "hours": {
+        "2": 117,
+        "3": 124
+      },
+      "lift": 0.17049952645766053,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": 14.263429752066116,
+      "avg_yes_price": 84.28099173553719,
+      "breakeven": 0.8532334710743802,
+      "bucket": "overnight",
+      "count": 242,
+      "distance_min": 10,
+      "hours": {
+        "2": 117,
+        "3": 125
+      },
+      "lift": 0.16716913055585825,
+      "unique": 3,
+      "win_rate": 0.9958677685950413,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": 13.651197604790418,
+      "avg_yes_price": 85.32335329341318,
+      "breakeven": 0.8634880239520958,
+      "bucket": "overnight",
+      "count": 167,
+      "distance_min": 50,
+      "hours": {
+        "2": 55,
+        "3": 112
+      },
+      "lift": 0.1580936530226591,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": 12.921641791044776,
+      "avg_yes_price": 86.09950248756219,
+      "breakeven": 0.8707835820895522,
+      "bucket": "overnight",
+      "count": 201,
+      "distance_min": 50,
+      "hours": {
+        "2": 89,
+        "3": 112
+      },
+      "lift": 0.14839096713373623,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": 11.369266055045872,
+      "avg_yes_price": 77.29357798165138,
+      "breakeven": 0.7853899082568807,
+      "bucket": "overnight",
+      "count": 109,
+      "distance_min": 5,
+      "hours": {
+        "2": 74,
+        "3": 35
+      },
+      "lift": 0.14475951289314604,
+      "unique": 3,
+      "win_rate": 0.8990825688073395,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": 11.806192660550458,
+      "avg_yes_price": 82.02752293577981,
+      "breakeven": 0.8314793577981652,
+      "bucket": "overnight",
+      "count": 218,
+      "distance_min": 5,
+      "hours": {
+        "2": 83,
+        "3": 135
+      },
+      "lift": 0.1419902075718915,
+      "unique": 3,
+      "win_rate": 0.9495412844036697,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": 12.326977401129943,
+      "avg_yes_price": 86.72598870056497,
+      "breakeven": 0.8767302259887005,
+      "bucket": "overnight",
+      "count": 354,
+      "distance_min": 25,
+      "hours": {
+        "2": 205,
+        "3": 149
+      },
+      "lift": 0.14060171573563185,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": 12.126760563380282,
+      "avg_yes_price": 86.64225352112676,
+      "breakeven": 0.8759154929577465,
+      "bucket": "overnight",
+      "count": 355,
+      "distance_min": 10,
+      "hours": {
+        "2": 205,
+        "3": 150
+      },
+      "lift": 0.1384466956102266,
+      "unique": 3,
+      "win_rate": 0.9971830985915493,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": 11.473214285714286,
+      "avg_yes_price": 83.09126984126983,
+      "breakeven": 0.8416170634920634,
+      "bucket": "overnight",
+      "count": 252,
+      "distance_min": 5,
+      "hours": {
+        "2": 117,
+        "3": 135
+      },
+      "lift": 0.13632345140566993,
+      "unique": 3,
+      "win_rate": 0.9563492063492064,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": 10.988853503184714,
+      "avg_yes_price": 88.11464968152866,
+      "breakeven": 0.8901114649681529,
+      "bucket": "overnight",
+      "count": 314,
+      "distance_min": 50,
+      "hours": {
+        "2": 177,
+        "3": 137
+      },
+      "lift": 0.12345480241149209,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": 8.8,
+      "avg_yes_price": 72.87692307692308,
+      "breakeven": 0.7427692307692307,
+      "bucket": "overnight",
+      "count": 65,
+      "distance_min": 5,
+      "hours": {
+        "2": 44,
+        "3": 21
+      },
+      "lift": 0.11847555923777975,
+      "unique": 3,
+      "win_rate": 0.8307692307692308,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": 10.258904109589041,
+      "avg_yes_price": 85.75616438356164,
+      "breakeven": 0.8672739726027398,
+      "bucket": "overnight",
+      "count": 365,
+      "distance_min": 5,
+      "hours": {
+        "2": 205,
+        "3": 160
+      },
+      "lift": 0.11828908088641787,
+      "unique": 3,
+      "win_rate": 0.9698630136986301,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": 9.511678200692042,
+      "avg_yes_price": 89.71453287197232,
+      "breakeven": 0.9048832179930796,
+      "bucket": "overnight",
+      "count": 578,
+      "distance_min": 25,
+      "hours": {
+        "2": 359,
+        "3": 219
+      },
+      "lift": 0.10511498071306691,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": 9.393782383419689,
+      "avg_yes_price": 89.65803108808291,
+      "breakeven": 0.9043350604490501,
+      "bucket": "overnight",
+      "count": 579,
+      "distance_min": 10,
+      "hours": {
+        "2": 359,
+        "3": 220
+      },
+      "lift": 0.10387502148545669,
+      "unique": 3,
+      "win_rate": 0.998272884283247,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": 8.521375464684015,
+      "avg_yes_price": 90.74721189591078,
+      "breakeven": 0.9147862453531599,
+      "bucket": "overnight",
+      "count": 538,
+      "distance_min": 50,
+      "hours": {
+        "2": 331,
+        "3": 207
+      },
+      "lift": 0.09315154778474266,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": 8.282682512733446,
+      "avg_yes_price": 89.05772495755518,
+      "breakeven": 0.8984974533106961,
+      "bucket": "overnight",
+      "count": 589,
+      "distance_min": 5,
+      "hours": {
+        "2": 359,
+        "3": 230
+      },
+      "lift": 0.0921837060551951,
+      "unique": 3,
+      "win_rate": 0.9813242784380306,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": 6.194915254237288,
+      "avg_yes_price": 93.22033898305085,
+      "breakeven": 0.9380508474576271,
+      "bucket": "overnight",
+      "count": 59,
+      "distance_min": 75,
+      "hours": {
+        "2": 54,
+        "3": 5
+      },
+      "lift": 0.0660402927093684,
+      "unique": 2,
+      "win_rate": 1.0,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": 1.961340206185567,
+      "avg_yes_price": 92.31958762886597,
+      "breakeven": 0.928840206185567,
+      "bucket": "overnight",
+      "count": 97,
+      "distance_min": 5,
+      "hours": {
+        "2": 92,
+        "3": 5
+      },
+      "lift": 0.021116013207913564,
+      "unique": 2,
+      "win_rate": 0.9484536082474226,
+      "window": "T-300..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -0.9694719471947195,
+      "avg_yes_price": 69.26237623762377,
+      "breakeven": 0.7044141914191419,
+      "bucket": "evening",
+      "count": 606,
+      "distance_min": 0,
+      "hours": {
+        "19": 606
+      },
+      "lift": -0.013762811127379093,
+      "unique": 2,
+      "win_rate": 0.6947194719471947,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -1.6813996316758748,
+      "avg_yes_price": 66.353591160221,
+      "breakeven": 0.6761141804788213,
+      "bucket": "evening",
+      "count": 543,
+      "distance_min": 0,
+      "hours": {
+        "19": 543
+      },
+      "lift": -0.024868575164110784,
+      "unique": 2,
+      "win_rate": 0.6593001841620626,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -2.451292246520875,
+      "avg_yes_price": 64.37375745526839,
+      "breakeven": 0.6567196819085487,
+      "bucket": "evening",
+      "count": 503,
+      "distance_min": 0,
+      "hours": {
+        "19": 503
+      },
+      "lift": -0.03732631005358278,
+      "unique": 2,
+      "win_rate": 0.6322067594433399,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -3.0509885535900105,
+      "avg_yes_price": 62.29656607700312,
+      "breakeven": 0.6319667013527576,
+      "bucket": "overnight",
+      "count": 961,
+      "distance_min": 0,
+      "hours": {
+        "2": 519,
+        "3": 442
+      },
+      "lift": -0.048277678983073224,
+      "unique": 4,
+      "win_rate": 0.6014568158168574,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -3.411134903640257,
+      "avg_yes_price": 62.45610278372591,
+      "breakeven": 0.63796573875803,
+      "bucket": "evening",
+      "count": 467,
+      "distance_min": 0,
+      "hours": {
+        "19": 467
+      },
+      "lift": -0.05346893565602662,
+      "unique": 2,
+      "win_rate": 0.6038543897216274,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": -5.282530120481928,
+      "avg_yes_price": 59.29879518072289,
+      "breakeven": 0.6070421686746987,
+      "bucket": "evening",
+      "count": 415,
+      "distance_min": 0,
+      "hours": {
+        "19": 415
+      },
+      "lift": -0.08702080997132045,
+      "unique": 2,
+      "win_rate": 0.5542168674698795,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": -5.5169606512890095,
+      "avg_yes_price": 52.52781546811398,
+      "breakeven": 0.5354952510176391,
+      "bucket": "overnight",
+      "count": 737,
+      "distance_min": 0,
+      "hours": {
+        "2": 365,
+        "3": 372
+      },
+      "lift": -0.10302538894238078,
+      "unique": 4,
+      "win_rate": 0.48032564450474896,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -7.883413461538462,
+      "avg_yes_price": 45.43429487179487,
+      "breakeven": 0.4650520833333333,
+      "bucket": "overnight",
+      "count": 624,
+      "distance_min": 0,
+      "hours": {
+        "2": 277,
+        "3": 347
+      },
+      "lift": -0.16951678627118194,
+      "unique": 4,
+      "win_rate": 0.38621794871794873,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -9.736842105263158,
+      "avg_yes_price": 54.166666666666664,
+      "breakeven": 0.5564327485380117,
+      "bucket": "evening",
+      "count": 342,
+      "distance_min": 0,
+      "hours": {
+        "19": 342
+      },
+      "lift": -0.17498686284813458,
+      "unique": 2,
+      "win_rate": 0.4590643274853801,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": -8.875847457627119,
+      "avg_yes_price": 42.87118644067797,
+      "breakeven": 0.43960593220338984,
+      "bucket": "overnight",
+      "count": 590,
+      "distance_min": 0,
+      "hours": {
+        "2": 243,
+        "3": 347
+      },
+      "lift": -0.2019046333869895,
+      "unique": 4,
+      "win_rate": 0.35084745762711866,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": -30.428003291278113,
+      "avg_yes_price": 84.23477783872737,
+      "breakeven": 0.8522778387273724,
+      "bucket": "all",
+      "count": 1823,
+      "distance_min": 25,
+      "hours": {
+        "2": 359,
+        "3": 219,
+        "12": 824,
+        "19": 421
+      },
+      "lift": -0.3570197640796742,
+      "unique": 6,
+      "win_rate": 0.5479978058145913,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -30.329636363636364,
+      "avg_yes_price": 80.95781818181818,
+      "breakeven": 0.8211145454545454,
+      "bucket": "all",
+      "count": 1375,
+      "distance_min": 25,
+      "hours": {
+        "2": 205,
+        "3": 149,
+        "12": 663,
+        "19": 358
+      },
+      "lift": -0.3693715637060935,
+      "unique": 6,
+      "win_rate": 0.5178181818181818,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -31.933237896928684,
+      "avg_yes_price": 82.90577824049974,
+      "breakeven": 0.8393740239458615,
+      "bucket": "all",
+      "count": 1921,
+      "distance_min": 10,
+      "hours": {
+        "2": 359,
+        "3": 220,
+        "12": 921,
+        "19": 421
+      },
+      "lift": -0.38044110236830886,
+      "unique": 7,
+      "win_rate": 0.5200416449765747,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -32.15226921093347,
+      "avg_yes_price": 82.63537906137184,
+      "breakeven": 0.8367367199587417,
+      "bucket": "all",
+      "count": 1939,
+      "distance_min": 5,
+      "hours": {
+        "2": 359,
+        "3": 230,
+        "12": 929,
+        "19": 421
+      },
+      "lift": -0.38425789670756716,
+      "unique": 7,
+      "win_rate": 0.515214027849407,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -31.295375218150088,
+      "avg_yes_price": 78.83944153577661,
+      "breakeven": 0.800737347294939,
+      "bucket": "all",
+      "count": 1146,
+      "distance_min": 25,
+      "hours": {
+        "2": 117,
+        "3": 124,
+        "12": 587,
+        "19": 318
+      },
+      "lift": -0.3908319666101815,
+      "unique": 6,
+      "win_rate": 0.48778359511343805,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -32.29921928038018,
+      "avg_yes_price": 79.44263408010862,
+      "breakeven": 0.8063594704684318,
+      "bucket": "all",
+      "count": 1473,
+      "distance_min": 10,
+      "hours": {
+        "2": 205,
+        "3": 150,
+        "12": 760,
+        "19": 358
+      },
+      "lift": -0.4005560852607939,
+      "unique": 7,
+      "win_rate": 0.48336727766463,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -13.661642411642411,
+      "avg_yes_price": 32.92515592515593,
+      "breakeven": 0.34035862785862786,
+      "bucket": "overnight",
+      "count": 481,
+      "distance_min": 0,
+      "hours": {
+        "2": 234,
+        "3": 247
+      },
+      "lift": -0.4013896312132549,
+      "unique": 4,
+      "win_rate": 0.20374220374220375,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": -32.57964453386989,
+      "avg_yes_price": 79.1327967806841,
+      "breakeven": 0.8033283031522468,
+      "bucket": "all",
+      "count": 1491,
+      "distance_min": 5,
+      "hours": {
+        "2": 205,
+        "3": 160,
+        "12": 768,
+        "19": 358
+      },
+      "lift": -0.40555828054393084,
+      "unique": 7,
+      "win_rate": 0.47753185781354796,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -32.23946360153257,
+      "avg_yes_price": 77.79693486590038,
+      "breakeven": 0.7907854406130268,
+      "bucket": "all",
+      "count": 1044,
+      "distance_min": 25,
+      "hours": {
+        "2": 83,
+        "3": 124,
+        "12": 555,
+        "19": 282
+      },
+      "lift": -0.4076891397562925,
+      "unique": 6,
+      "win_rate": 0.46839080459770116,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": -36.392171910974675,
+      "avg_yes_price": 88.04834996162701,
+      "breakeven": 0.8888641596316194,
+      "bucket": "all",
+      "count": 1303,
+      "distance_min": 50,
+      "hours": {
+        "2": 331,
+        "3": 207,
+        "12": 619,
+        "19": 146
+      },
+      "lift": -0.4094233243250245,
+      "unique": 6,
+      "win_rate": 0.5249424405218726,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -33.551446945337624,
+      "avg_yes_price": 77.21221864951768,
+      "breakeven": 0.7848713826366559,
+      "bucket": "all",
+      "count": 1244,
+      "distance_min": 10,
+      "hours": {
+        "2": 117,
+        "3": 125,
+        "12": 684,
+        "19": 318
+      },
+      "lift": -0.42747700690305,
+      "unique": 7,
+      "win_rate": 0.44935691318327975,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -33.864896988906494,
+      "avg_yes_price": 76.87797147385103,
+      "breakeven": 0.7815966719492868,
+      "bucket": "all",
+      "count": 1262,
+      "distance_min": 5,
+      "hours": {
+        "2": 117,
+        "3": 135,
+        "12": 692,
+        "19": 318
+      },
+      "lift": -0.43327841845140036,
+      "unique": 7,
+      "win_rate": 0.4429477020602219,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -31.10366096299244,
+      "avg_yes_price": 69.77278153601273,
+      "breakeven": 0.7085694389176284,
+      "bucket": "all",
+      "count": 2513,
+      "distance_min": 0,
+      "hours": {
+        "2": 519,
+        "3": 442,
+        "12": 946,
+        "19": 606
+      },
+      "lift": -0.43896418974130014,
+      "unique": 9,
+      "win_rate": 0.39753282928770395,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -40.597517730496456,
+      "avg_yes_price": 90.62056737588652,
+      "breakeven": 0.9130673758865248,
+      "bucket": "all",
+      "count": 282,
+      "distance_min": 50,
+      "hours": {
+        "2": 92,
+        "12": 139,
+        "19": 51
+      },
+      "lift": -0.4446278423985863,
+      "unique": 5,
+      "win_rate": 0.5070921985815603,
+      "window": "T-300..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -34.61602451838879,
+      "avg_yes_price": 76.11383537653239,
+      "breakeven": 0.7743563922942207,
+      "bucket": "all",
+      "count": 1142,
+      "distance_min": 10,
+      "hours": {
+        "2": 83,
+        "3": 125,
+        "12": 652,
+        "19": 282
+      },
+      "lift": -0.4470296217976626,
+      "unique": 7,
+      "win_rate": 0.42819614711033277,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": -16.247867803837952,
+      "avg_yes_price": 34.89765458422175,
+      "breakeven": 0.3586407249466951,
+      "bucket": "overnight",
+      "count": 469,
+      "distance_min": 0,
+      "hours": {
+        "2": 252,
+        "3": 217
+      },
+      "lift": -0.4530402342414649,
+      "unique": 3,
+      "win_rate": 0.19616204690831557,
+      "window": "T-300..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -34.94051724137931,
+      "avg_yes_price": 75.76724137931035,
+      "breakeven": 0.7709568965517242,
+      "bucket": "all",
+      "count": 1160,
+      "distance_min": 5,
+      "hours": {
+        "2": 83,
+        "3": 135,
+        "12": 660,
+        "19": 282
+      },
+      "lift": -0.4532097371157653,
+      "unique": 7,
+      "win_rate": 0.421551724137931,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": -39.35906432748538,
+      "avg_yes_price": 84.7766081871345,
+      "breakeven": 0.8579181286549707,
+      "bucket": "all",
+      "count": 855,
+      "distance_min": 50,
+      "hours": {
+        "2": 177,
+        "3": 137,
+        "12": 458,
+        "19": 83
+      },
+      "lift": -0.4587741302213981,
+      "unique": 6,
+      "win_rate": 0.464327485380117,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -31.184745762711863,
+      "avg_yes_price": 64.45326876513317,
+      "breakeven": 0.6566416464891041,
+      "bucket": "all",
+      "count": 2065,
+      "distance_min": 0,
+      "hours": {
+        "2": 365,
+        "3": 372,
+        "12": 785,
+        "19": 543
+      },
+      "lift": -0.47491270054905543,
+      "unique": 9,
+      "win_rate": 0.3447941888619855,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -37.38131009615385,
+      "avg_yes_price": 75.43389423076923,
+      "breakeven": 0.7680438701923077,
+      "bucket": "all",
+      "count": 832,
+      "distance_min": 25,
+      "hours": {
+        "2": 74,
+        "3": 24,
+        "12": 504,
+        "19": 230
+      },
+      "lift": -0.4867080064943957,
+      "unique": 6,
+      "win_rate": 0.3942307692307692,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": -31.89419934640523,
+      "avg_yes_price": 61.07244008714597,
+      "breakeven": 0.6234082244008714,
+      "bucket": "all",
+      "count": 1836,
+      "distance_min": 0,
+      "hours": {
+        "2": 277,
+        "3": 347,
+        "12": 709,
+        "19": 503
+      },
+      "lift": -0.5116101793019694,
+      "unique": 9,
+      "win_rate": 0.3044662309368192,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -44.014263074484944,
+      "avg_yes_price": 82.36608557844691,
+      "breakeven": 0.8347543581616481,
+      "bucket": "all",
+      "count": 631,
+      "distance_min": 50,
+      "hours": {
+        "2": 89,
+        "3": 112,
+        "12": 382,
+        "19": 48
+      },
+      "lift": -0.5272720369069541,
+      "unique": 6,
+      "win_rate": 0.39461172741679873,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -39.75779569892473,
+      "avg_yes_price": 73.61612903225806,
+      "breakeven": 0.7502661290322581,
+      "bucket": "all",
+      "count": 930,
+      "distance_min": 10,
+      "hours": {
+        "2": 74,
+        "3": 25,
+        "12": 601,
+        "19": 230
+      },
+      "lift": -0.5299159079753063,
+      "unique": 7,
+      "win_rate": 0.35268817204301073,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": -32.497837370242216,
+      "avg_yes_price": 59.39965397923876,
+      "breakeven": 0.606985294117647,
+      "bucket": "all",
+      "count": 1734,
+      "distance_min": 0,
+      "hours": {
+        "2": 243,
+        "3": 347,
+        "12": 677,
+        "19": 467
+      },
+      "lift": -0.5353974418356076,
+      "unique": 9,
+      "win_rate": 0.2820069204152249,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": -40.057225738396625,
+      "avg_yes_price": 73.23945147679325,
+      "breakeven": 0.7465638185654009,
+      "bucket": "all",
+      "count": 948,
+      "distance_min": 5,
+      "hours": {
+        "2": 74,
+        "3": 35,
+        "12": 609,
+        "19": 230
+      },
+      "lift": -0.5365546084910826,
+      "unique": 7,
+      "win_rate": 0.3459915611814346,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": -27.96887966804979,
+      "avg_yes_price": 50.32780082987552,
+      "breakeven": 0.5162033195020747,
+      "bucket": "evening",
+      "count": 241,
+      "distance_min": 0,
+      "hours": {
+        "19": 241
+      },
+      "lift": -0.5418190587195049,
+      "unique": 2,
+      "win_rate": 0.23651452282157676,
+      "window": "T-300..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -41.03565768621236,
+      "avg_yes_price": 73.01584786053883,
+      "breakeven": 0.7447464342313788,
+      "bucket": "all",
+      "count": 631,
+      "distance_min": 25,
+      "hours": {
+        "2": 44,
+        "3": 10,
+        "12": 420,
+        "19": 157
+      },
+      "lift": -0.5510017342824007,
+      "unique": 5,
+      "win_rate": 0.33438985736925514,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": -46.10045454545455,
+      "avg_yes_price": 81.30181818181818,
+      "breakeven": 0.824640909090909,
+      "bucket": "all",
+      "count": 550,
+      "distance_min": 50,
+      "hours": {
+        "2": 55,
+        "3": 112,
+        "12": 350,
+        "19": 33
+      },
+      "lift": -0.5590367157054585,
+      "unique": 6,
+      "win_rate": 0.36363636363636365,
+      "window": "T-600..60s",
+      "yes_max": 88
+    },
+    {
+      "avg_net_cents": -16.56407322654462,
+      "avg_yes_price": 27.80091533180778,
+      "breakeven": 0.2892105263157895,
+      "bucket": "overnight",
+      "count": 437,
+      "distance_min": 0,
+      "hours": {
+        "2": 204,
+        "3": 233
+      },
+      "lift": -0.5727341061043636,
+      "unique": 4,
+      "win_rate": 0.12356979405034325,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": -49.95278450363196,
+      "avg_yes_price": 85.09685230024213,
+      "breakeven": 0.8603026634382567,
+      "bucket": "all",
+      "count": 413,
+      "distance_min": 25,
+      "hours": {
+        "2": 92,
+        "12": 264,
+        "19": 57
+      },
+      "lift": -0.5806419836478518,
+      "unique": 5,
+      "win_rate": 0.36077481840193704,
+      "window": "T-300..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -43.5761316872428,
+      "avg_yes_price": 71.02194787379973,
+      "breakeven": 0.72519890260631,
+      "bucket": "all",
+      "count": 729,
+      "distance_min": 10,
+      "hours": {
+        "2": 44,
+        "3": 11,
+        "12": 517,
+        "19": 157
+      },
+      "lift": -0.6008852403200484,
+      "unique": 6,
+      "win_rate": 0.289437585733882,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": -43.86412315930388,
+      "avg_yes_price": 70.60642570281125,
+      "breakeven": 0.7211044176706827,
+      "bucket": "all",
+      "count": 747,
+      "distance_min": 5,
+      "hours": {
+        "2": 44,
+        "3": 21,
+        "12": 525,
+        "19": 157
+      },
+      "lift": -0.6082908672365941,
+      "unique": 6,
+      "win_rate": 0.2824631860776439,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": -51.352467811158796,
+      "avg_yes_price": 82.30042918454936,
+      "breakeven": 0.8332671673819743,
+      "bucket": "all",
+      "count": 466,
+      "distance_min": 10,
+      "hours": {
+        "2": 92,
+        "12": 317,
+        "19": 57
+      },
+      "lift": -0.6162785457214414,
+      "unique": 5,
+      "win_rate": 0.3197424892703863,
+      "window": "T-300..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -51.42879746835443,
+      "avg_yes_price": 81.82489451476793,
+      "breakeven": 0.8286339662447257,
+      "bucket": "all",
+      "count": 474,
+      "distance_min": 5,
+      "hours": {
+        "2": 92,
+        "3": 5,
+        "12": 320,
+        "19": 57
+      },
+      "lift": -0.62064553908433,
+      "unique": 6,
+      "win_rate": 0.3143459915611814,
+      "window": "T-300..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -35.3446123521682,
+      "avg_yes_price": 55.54533508541393,
+      "breakeven": 0.5689520367936926,
+      "bucket": "all",
+      "count": 1522,
+      "distance_min": 0,
+      "hours": {
+        "2": 234,
+        "3": 247,
+        "12": 626,
+        "19": 415
+      },
+      "lift": -0.621223056891604,
+      "unique": 9,
+      "win_rate": 0.21550591327201052,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": -36.78028009084027,
+      "avg_yes_price": 51.364118092354275,
+      "breakeven": 0.5275302800908402,
+      "bucket": "all",
+      "count": 1321,
+      "distance_min": 0,
+      "hours": {
+        "2": 204,
+        "3": 233,
+        "12": 542,
+        "19": 342
+      },
+      "lift": -0.6972164722849035,
+      "unique": 8,
+      "win_rate": 0.15972747918243754,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": -30.10781990521327,
+      "avg_yes_price": 40.90047393364929,
+      "breakeven": 0.42430094786729855,
+      "bucket": "evening",
+      "count": 211,
+      "distance_min": 0,
+      "hours": {
+        "19": 211
+      },
+      "lift": -0.7095864399206948,
+      "unique": 2,
+      "win_rate": 0.12322274881516587,
+      "window": "T-600..60s",
+      "yes_max": 70
+    },
+    {
+      "avg_net_cents": -38.200819672131146,
+      "avg_yes_price": 51.427193828351015,
+      "breakeven": 0.525691899710704,
+      "bucket": "all",
+      "count": 1037,
+      "distance_min": 0,
+      "hours": {
+        "2": 252,
+        "3": 217,
+        "12": 327,
+        "19": 241
+      },
+      "lift": -0.7266769697831301,
+      "unique": 8,
+      "win_rate": 0.14368370298939248,
+      "window": "T-300..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -51.82396449704142,
+      "avg_yes_price": 65.53846153846153,
+      "breakeven": 0.672085798816568,
+      "bucket": "all",
+      "count": 169,
+      "distance_min": 25,
+      "hours": {
+        "12": 143,
+        "19": 26
+      },
+      "lift": -0.7710914973697532,
+      "unique": 3,
+      "win_rate": 0.15384615384615385,
+      "window": "T-600..60s",
+      "yes_max": 70
+    },
+    {
+      "avg_net_cents": -62.60208333333333,
+      "avg_yes_price": 78.26388888888889,
+      "breakeven": 0.7954652777777778,
+      "bucket": "all",
+      "count": 360,
+      "distance_min": 50,
+      "hours": {
+        "2": 46,
+        "3": 12,
+        "12": 299,
+        "19": 3
+      },
+      "lift": -0.7869870009690345,
+      "unique": 6,
+      "win_rate": 0.16944444444444445,
+      "window": "T-600..60s",
+      "yes_max": 85
+    },
+    {
+      "avg_net_cents": -54.800561797752806,
+      "avg_yes_price": 62.838951310861425,
+      "breakeven": 0.6453838951310862,
+      "bucket": "all",
+      "count": 267,
+      "distance_min": 10,
+      "hours": {
+        "3": 1,
+        "12": 240,
+        "19": 26
+      },
+      "lift": -0.8491157311358394,
+      "unique": 4,
+      "win_rate": 0.09737827715355805,
+      "window": "T-600..60s",
+      "yes_max": 70
+    },
+    {
+      "avg_net_cents": -54.84649122807018,
+      "avg_yes_price": 62.266666666666666,
+      "breakeven": 0.6396929824561404,
+      "bucket": "all",
+      "count": 285,
+      "distance_min": 5,
+      "hours": {
+        "3": 11,
+        "12": 248,
+        "19": 26
+      },
+      "lift": -0.8573877271169009,
+      "unique": 4,
+      "win_rate": 0.0912280701754386,
+      "window": "T-600..60s",
+      "yes_max": 70
+    },
+    {
+      "avg_net_cents": -76.72207207207207,
+      "avg_yes_price": 88.32972972972973,
+      "breakeven": 0.8915450450450451,
+      "bucket": "all",
+      "count": 555,
+      "distance_min": 75,
+      "hours": {
+        "2": 54,
+        "3": 5,
+        "12": 486,
+        "19": 10
+      },
+      "lift": -0.8605518307624682,
+      "unique": 6,
+      "win_rate": 0.12432432432432433,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -36.62565445026178,
+      "avg_yes_price": 38.79057591623037,
+      "breakeven": 0.40290575916230364,
+      "bucket": "evening",
+      "count": 191,
+      "distance_min": 0,
+      "hours": {
+        "19": 191
+      },
+      "lift": -0.9090377493340264,
+      "unique": 2,
+      "win_rate": 0.03664921465968586,
+      "window": "T-300..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -70.3076923076923,
+      "avg_yes_price": 75.76495726495726,
+      "breakeven": 0.7714529914529914,
+      "bucket": "all",
+      "count": 234,
+      "distance_min": 50,
+      "hours": {
+        "2": 16,
+        "12": 218
+      },
+      "lift": -0.9113671615333481,
+      "unique": 3,
+      "win_rate": 0.06837606837606838,
+      "window": "T-600..60s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": -36.61408614668219,
+      "avg_yes_price": 38.247962747380676,
+      "breakeven": 0.39640861466821886,
+      "bucket": "all",
+      "count": 859,
+      "distance_min": 0,
+      "hours": {
+        "2": 160,
+        "3": 223,
+        "12": 265,
+        "19": 211
+      },
+      "lift": -0.9236450670308209,
+      "unique": 6,
+      "win_rate": 0.030267753201396973,
+      "window": "T-600..60s",
+      "yes_max": 70
+    },
+    {
+      "avg_net_cents": -80.06884057971014,
+      "avg_yes_price": 84.84347826086956,
+      "breakeven": 0.8586594202898551,
+      "bucket": "all",
+      "count": 345,
+      "distance_min": 75,
+      "hours": {
+        "2": 20,
+        "12": 325
+      },
+      "lift": -0.9324866028102452,
+      "unique": 4,
+      "win_rate": 0.057971014492753624,
+      "window": "T-600..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -73.03731343283582,
+      "avg_yes_price": 75.12935323383084,
+      "breakeven": 0.7651990049751244,
+      "bucket": "all",
+      "count": 201,
+      "distance_min": 25,
+      "hours": {
+        "12": 194,
+        "19": 7
+      },
+      "lift": -0.9544878254933195,
+      "unique": 3,
+      "win_rate": 0.03482587064676617,
+      "window": "T-300..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -70.78838582677166,
+      "avg_yes_price": 72.07874015748031,
+      "breakeven": 0.7354429133858268,
+      "bucket": "all",
+      "count": 254,
+      "distance_min": 10,
+      "hours": {
+        "12": 247,
+        "19": 7
+      },
+      "lift": -0.9625272681040136,
+      "unique": 3,
+      "win_rate": 0.027559055118110236,
+      "window": "T-300..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -70.33301526717557,
+      "avg_yes_price": 71.53053435114504,
+      "breakeven": 0.7300477099236641,
+      "bucket": "all",
+      "count": 262,
+      "distance_min": 5,
+      "hours": {
+        "3": 5,
+        "12": 250,
+        "19": 7
+      },
+      "lift": -0.9634029983400646,
+      "unique": 4,
+      "win_rate": 0.026717557251908396,
+      "window": "T-300..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -40.805151515151515,
+      "avg_yes_price": 40.346666666666664,
+      "breakeven": 0.41653636363636365,
+      "bucket": "all",
+      "count": 825,
+      "distance_min": 0,
+      "hours": {
+        "2": 160,
+        "3": 217,
+        "12": 257,
+        "19": 191
+      },
+      "lift": -0.9796299933797479,
+      "unique": 6,
+      "win_rate": 0.008484848484848486,
+      "window": "T-300..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -78.55,
+      "avg_yes_price": 78.72857142857143,
+      "breakeven": 0.7997857142857143,
+      "bucket": "all",
+      "count": 70,
+      "distance_min": 50,
+      "hours": {
+        "12": 69,
+        "19": 1
+      },
+      "lift": -0.9821380726980441,
+      "unique": 3,
+      "win_rate": 0.014285714285714285,
+      "window": "T-300..60s",
+      "yes_max": 92
+    },
+    {
+      "avg_net_cents": -38.07027027027027,
+      "avg_yes_price": 37.086486486486486,
+      "breakeven": 0.3861081081081081,
+      "bucket": "evening",
+      "count": 185,
+      "distance_min": 0,
+      "hours": {
+        "19": 185
+      },
+      "lift": -0.9860002799944001,
+      "unique": 2,
+      "win_rate": 0.005405405405405406,
+      "window": "T-300..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -82.63844621513944,
+      "avg_yes_price": 82.31075697211155,
+      "breakeven": 0.8343525896414342,
+      "bucket": "all",
+      "count": 251,
+      "distance_min": 75,
+      "hours": {
+        "2": 2,
+        "12": 249
+      },
+      "lift": -0.9904499277775788,
+      "unique": 4,
+      "win_rate": 0.00796812749003984,
+      "window": "T-600..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -75.43943298969072,
+      "avg_yes_price": 74.54123711340206,
+      "breakeven": 0.759548969072165,
+      "bucket": "all",
+      "count": 194,
+      "distance_min": 25,
+      "hours": {
+        "12": 193,
+        "19": 1
+      },
+      "lift": -0.9932135525355864,
+      "unique": 3,
+      "win_rate": 0.005154639175257732,
+      "window": "T-300..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -72.61133603238866,
+      "avg_yes_price": 71.53036437246963,
+      "breakeven": 0.7301619433198381,
+      "bucket": "all",
+      "count": 247,
+      "distance_min": 10,
+      "hours": {
+        "12": 246,
+        "19": 1
+      },
+      "lift": -0.9944552259495426,
+      "unique": 3,
+      "win_rate": 0.004048582995951417,
+      "window": "T-300..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -72.08627450980393,
+      "avg_yes_price": 70.9843137254902,
+      "breakeven": 0.7247843137254902,
+      "bucket": "all",
+      "count": 255,
+      "distance_min": 5,
+      "hours": {
+        "3": 5,
+        "12": 249,
+        "19": 1
+      },
+      "lift": -0.9945893301590737,
+      "unique": 4,
+      "win_rate": 0.00392156862745098,
+      "window": "T-300..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -41.099022004889974,
+      "avg_yes_price": 39.909535452322736,
+      "breakeven": 0.41221271393643033,
+      "bucket": "all",
+      "count": 818,
+      "distance_min": 0,
+      "hours": {
+        "2": 160,
+        "3": 217,
+        "12": 256,
+        "19": 185
+      },
+      "lift": -0.9970343129986061,
+      "unique": 6,
+      "win_rate": 0.0012224938875305623,
+      "window": "T-300..60s",
+      "yes_max": 90
+    },
+    {
+      "avg_net_cents": -89.92961165048544,
+      "avg_yes_price": 89.39805825242719,
+      "breakeven": 0.9017233009708738,
+      "bucket": "all",
+      "count": 412,
+      "distance_min": 100,
+      "hours": {
+        "12": 411,
+        "19": 1
+      },
+      "lift": -0.997308282415009,
+      "unique": 3,
+      "win_rate": 0.0024271844660194173,
+      "window": "T-600..60s",
+      "yes_max": 95
+    },
+    {
+      "avg_net_cents": -4.211538461538462,
+      "avg_yes_price": 3.8205128205128207,
+      "breakeven": 0.04211538461538462,
+      "bucket": "all",
+      "count": 39,
+      "distance_min": 0,
+      "hours": {
+        "2": 20,
+        "3": 19
+      },
+      "lift": -1.0,
+      "unique": 3,
+      "win_rate": 0.0,
+      "window": "T-10..1s",
+      "yes_max": 40
+    },
+    {
+      "avg_net_cents": -4.211538461538462,
+      "avg_yes_price": 3.8205128205128207,
+      "breakeven": 0.04211538461538462,
+      "bucket": "all",
+      "count": 39,
+      "distance_min": 0,
+      "hours": {
+        "2": 20,
+        "3": 19
+      },
+      "lift": -1.0,
+      "unique": 3,
+      "win_rate": 0.0,
+      "window": "T-10..1s",
+      "yes_max": 50
+    },
+    {
+      "avg_net_cents": -4.211538461538462,
+      "avg_yes_price": 3.8205128205128207,
+      "breakeven": 0.04211538461538462,
+      "bucket": "all",
+      "count": 39,
+      "distance_min": 0,
+      "hours": {
+        "2": 20,
+        "3": 19
+      },
+      "lift": -1.0,
+      "unique": 3,
+      "win_rate": 0.0,
+      "window": "T-10..1s",
+      "yes_max": 60
+    },
+    {
+      "avg_net_cents": -4.211538461538462,
+      "avg_yes_price": 3.8205128205128207,
+      "breakeven": 0.04211538461538462,
+      "bucket": "all",
+      "count": 39,
+      "distance_min": 0,
+      "hours": {
+        "2": 20,
+        "3": 19
+      },
+      "lift": -1.0,
+      "unique": 3,
+      "win_rate": 0.0,
+      "window": "T-10..1s",
+      "yes_max": 70
+    },
+    {
+      "avg_net_cents": -4.211538461538462,
+      "avg_yes_price": 3.8205128205128207,
+      "breakeven": 0.04211538461538462,
+      "bucket": "all",
+      "count": 39,
+      "distance_min": 0,
+      "hours": {
+        "2": 20,
+        "3": 19
+      },
+      "lift": -1.0,
+      "unique": 3,
+      "win_rate": 0.0,
+      "window": "T-10..1s",
+      "yes_max": 80
+    },
+    {
+      "avg_net_cents": -4.211538461538462,
+      "avg_yes_price": 3.8205128205128207,
+      "breakeven": 0.04211538461538462,
+      "bucket": "all",
+      "count": 39,
+      "distance_min": 0,
+      "hours": {
+        "2": 20,
+        "3": 19
+      },
+      "lift": -1.0,
+      "unique": 3,
+      "win_rate": 0.0,
+      "window": "T-10..1s",
+      "yes_max": 85
+    }
+  ]
+}

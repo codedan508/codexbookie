@@ -1,0 +1,16 @@
+node_modules/
+.venv/
+.env
+.env.*
+!.env.example
+credentials/
+
+results/
+records/
+*.log
+
+__pycache__/
+*.py[cod]
+
+.DS_Store
+npm-debug.log*

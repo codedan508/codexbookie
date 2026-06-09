@@ -1,0 +1,439 @@
+{
+  "date": "2026-05-29",
+  "official_finals": {
+    "0": {
+      "final": 73198.54,
+      "event_ticker": "KXBTCD-26MAY2900",
+      "settlement_ts": "2026-05-29T04:03:16.104128Z"
+    },
+    "1": {
+      "final": 73401.15,
+      "event_ticker": "KXBTCD-26MAY2901",
+      "settlement_ts": "2026-05-29T05:03:06.093551Z"
+    },
+    "2": {
+      "final": 73596.62,
+      "event_ticker": "KXBTCD-26MAY2902",
+      "settlement_ts": "2026-05-29T06:03:04.832775Z"
+    },
+    "3": {
+      "final": 73685.66,
+      "event_ticker": "KXBTCD-26MAY2903",
+      "settlement_ts": "2026-05-29T07:07:38.445993Z"
+    },
+    "4": {
+      "final": 73403.05,
+      "event_ticker": "KXBTCD-26MAY2904",
+      "settlement_ts": "2026-05-29T08:03:06.079245Z"
+    },
+    "5": {
+      "final": 73551.32,
+      "event_ticker": "KXBTCD-26MAY2905",
+      "settlement_ts": "2026-05-29T09:03:06.075945Z"
+    },
+    "6": {
+      "final": 73646.75,
+      "event_ticker": "KXBTCD-26MAY2906",
+      "settlement_ts": "2026-05-29T10:04:36.075136Z"
+    },
+    "7": {
+      "final": 73561.78,
+      "event_ticker": "KXBTCD-26MAY2907",
+      "settlement_ts": "2026-05-29T11:02:56.076738Z"
+    },
+    "8": {
+      "final": 73373.64,
+      "event_ticker": "KXBTCD-26MAY2908",
+      "settlement_ts": "2026-05-29T12:03:16.075999Z"
+    },
+    "9": {
+      "final": 73195.74,
+      "event_ticker": "KXBTCD-26MAY2909",
+      "settlement_ts": "2026-05-29T13:03:06.081141Z"
+    },
+    "10": {
+      "final": 73046.79,
+      "event_ticker": "KXBTCD-26MAY2910",
+      "settlement_ts": "2026-05-29T14:03:16.295757Z"
+    },
+    "11": {
+      "final": 73002.02,
+      "event_ticker": "KXBTCD-26MAY2911",
+      "settlement_ts": "2026-05-29T15:04:26.303235Z"
+    },
+    "12": {
+      "final": 73707.29,
+      "event_ticker": "KXBTCD-26MAY2912",
+      "settlement_ts": "2026-05-29T16:02:59.403136Z"
+    },
+    "13": {
+      "final": 73972.54,
+      "event_ticker": "KXBTCD-26MAY2913",
+      "settlement_ts": "2026-05-29T17:03:29.347864Z"
+    },
+    "14": {
+      "final": 73895.96,
+      "event_ticker": "KXBTCD-26MAY2914",
+      "settlement_ts": "2026-05-29T18:02:59.409309Z"
+    },
+    "15": {
+      "final": 73265.26,
+      "event_ticker": "KXBTCD-26MAY2915",
+      "settlement_ts": "2026-05-29T19:03:19.351739Z"
+    },
+    "16": {
+      "final": 73433.44,
+      "event_ticker": "KXBTCD-26MAY2916",
+      "settlement_ts": "2026-05-29T20:02:59.34478Z"
+    },
+    "17": {
+      "final": 73574.33,
+      "event_ticker": "KXBTCD-26MAY2917",
+      "settlement_ts": "2026-05-29T21:03:00.690666Z"
+    },
+    "18": {
+      "final": 73343.16,
+      "event_ticker": "KXBTCD-26MAY2918",
+      "settlement_ts": "2026-05-29T22:02:50.688916Z"
+    },
+    "19": {
+      "final": 73391.6,
+      "event_ticker": "KXBTCD-26MAY2919",
+      "settlement_ts": "2026-05-29T23:03:10.692418Z"
+    },
+    "20": {
+      "final": 73377.45,
+      "event_ticker": "KXBTCD-26MAY2920",
+      "settlement_ts": "2026-05-30T00:03:00.789845Z"
+    },
+    "21": {
+      "final": 73448.94,
+      "event_ticker": "KXBTCD-26MAY2921",
+      "settlement_ts": "2026-05-30T01:03:40.743733Z"
+    }
+  },
+  "scanner_hours": [
+    1,
+    2,
+    3,
+    4,
+    12,
+    13,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "total_rows": 102068,
+  "lag": {
+    "first50_rows": 75574,
+    "stale_btc_move_events": 16330,
+    "by_direction": {
+      "up": 8693,
+      "down": 7637
+    },
+    "target": 4,
+    "summary": {
+      "btc_up_yes_catchup": {
+        "events": 8693,
+        "10s": {
+          "eligible": 8602,
+          "hits": 557,
+          "hit_pct": 6.48,
+          "avg_best_move": 0.908,
+          "median_hit_time": 6.004,
+          "mean_hit_time": 5.775
+        },
+        "30s": {
+          "eligible": 8469,
+          "hits": 1584,
+          "hit_pct": 18.7,
+          "avg_best_move": 1.997,
+          "median_hit_time": 13.618,
+          "mean_hit_time": 14.34
+        },
+        "60s": {
+          "eligible": 8247,
+          "hits": 2340,
+          "hit_pct": 28.37,
+          "avg_best_move": 3.085,
+          "median_hit_time": 21.031,
+          "mean_hit_time": 24.355
+        },
+        "120s": {
+          "eligible": 7872,
+          "hits": 3134,
+          "hit_pct": 39.81,
+          "avg_best_move": 4.863,
+          "median_hit_time": 32.964,
+          "mean_hit_time": 42.859
+        },
+        "300s": {
+          "eligible": 6875,
+          "hits": 3768,
+          "hit_pct": 54.81,
+          "avg_best_move": 8.451,
+          "median_hit_time": 59.382,
+          "mean_hit_time": 87.903
+        },
+        "late_after_30s_by_5m": {
+          "eligible": 6875,
+          "hits": 2519,
+          "pct": 36.64
+        }
+      },
+      "btc_down_yes_drop": {
+        "events": 7637,
+        "10s": {
+          "eligible": 7503,
+          "hits": 448,
+          "hit_pct": 5.97,
+          "avg_best_move": 0.825,
+          "median_hit_time": 5.507,
+          "mean_hit_time": 5.483
+        },
+        "30s": {
+          "eligible": 7367,
+          "hits": 1207,
+          "hit_pct": 16.38,
+          "avg_best_move": 1.718,
+          "median_hit_time": 13.612,
+          "mean_hit_time": 14.186
+        },
+        "60s": {
+          "eligible": 7199,
+          "hits": 1832,
+          "hit_pct": 25.45,
+          "avg_best_move": 2.618,
+          "median_hit_time": 21.833,
+          "mean_hit_time": 24.489
+        },
+        "120s": {
+          "eligible": 6894,
+          "hits": 2473,
+          "hit_pct": 35.87,
+          "avg_best_move": 3.978,
+          "median_hit_time": 33.702,
+          "mean_hit_time": 41.806
+        },
+        "300s": {
+          "eligible": 6189,
+          "hits": 3038,
+          "hit_pct": 49.09,
+          "avg_best_move": 6.407,
+          "median_hit_time": 53.156,
+          "mean_hit_time": 81.52
+        },
+        "late_after_30s_by_5m": {
+          "eligible": 6189,
+          "hits": 2013,
+          "pct": 32.53
+        }
+      }
+    },
+    "repeated_exact_btc_delta": {
+      "up": [
+        {
+          "btc_delta": 6,
+          "events": 412,
+          "hit_4c_5m": 233,
+          "hit_pct": 56.55
+        },
+        {
+          "btc_delta": 7,
+          "events": 209,
+          "hit_4c_5m": 105,
+          "hit_pct": 50.24
+        },
+        {
+          "btc_delta": 4,
+          "events": 729,
+          "hit_4c_5m": 345,
+          "hit_pct": 47.33
+        },
+        {
+          "btc_delta": 8,
+          "events": 138,
+          "hit_4c_5m": 64,
+          "hit_pct": 46.38
+        },
+        {
+          "btc_delta": 3,
+          "events": 1008,
+          "hit_4c_5m": 467,
+          "hit_pct": 46.33
+        },
+        {
+          "btc_delta": 2,
+          "events": 1843,
+          "hit_4c_5m": 795,
+          "hit_pct": 43.14
+        },
+        {
+          "btc_delta": 1,
+          "events": 3491,
+          "hit_4c_5m": 1396,
+          "hit_pct": 39.99
+        },
+        {
+          "btc_delta": 5,
+          "events": 485,
+          "hit_4c_5m": 192,
+          "hit_pct": 39.59
+        }
+      ],
+      "down": [
+        {
+          "btc_delta": -7,
+          "events": 159,
+          "hit_4c_5m": 85,
+          "hit_pct": 53.46
+        },
+        {
+          "btc_delta": -6,
+          "events": 363,
+          "hit_4c_5m": 174,
+          "hit_pct": 47.93
+        },
+        {
+          "btc_delta": -5,
+          "events": 447,
+          "hit_4c_5m": 210,
+          "hit_pct": 46.98
+        },
+        {
+          "btc_delta": -3,
+          "events": 898,
+          "hit_4c_5m": 387,
+          "hit_pct": 43.1
+        },
+        {
+          "btc_delta": -4,
+          "events": 607,
+          "hit_4c_5m": 254,
+          "hit_pct": 41.85
+        },
+        {
+          "btc_delta": -2,
+          "events": 1527,
+          "hit_4c_5m": 631,
+          "hit_pct": 41.32
+        },
+        {
+          "btc_delta": -1,
+          "events": 3099,
+          "hit_4c_5m": 1094,
+          "hit_pct": 35.3
+        },
+        {
+          "btc_delta": -8,
+          "events": 139,
+          "hit_4c_5m": 47,
+          "hit_pct": 33.81
+        }
+      ]
+    }
+  },
+  "expiration": {
+    "official_hours_used": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "rows_with_official_finals": 88642,
+    "last10_rows": 10855,
+    "last10_exact_yes_prices_min_2500_rows": [],
+    "last10_exact_yes_top_by_rows": [
+      {
+        "yes_price": 2,
+        "rows": 977,
+        "yes_wins": 0,
+        "win_pct": 0.0,
+        "avg_net_cents": -3.0
+      },
+      {
+        "yes_price": 99,
+        "rows": 856,
+        "yes_wins": 856,
+        "win_pct": 100.0,
+        "avg_net_cents": 0.0
+      },
+      {
+        "yes_price": 3,
+        "rows": 701,
+        "yes_wins": 0,
+        "win_pct": 0.0,
+        "avg_net_cents": -4.0
+      },
+      {
+        "yes_price": 4,
+        "rows": 422,
+        "yes_wins": 0,
+        "win_pct": 0.0,
+        "avg_net_cents": -5.0
+      },
+      {
+        "yes_price": 98,
+        "rows": 406,
+        "yes_wins": 406,
+        "win_pct": 100.0,
+        "avg_net_cents": 1.0
+      },
+      {
+        "yes_price": 5,
+        "rows": 376,
+        "yes_wins": 0,
+        "win_pct": 0.0,
+        "avg_net_cents": -6.0
+      },
+      {
+        "yes_price": 97,
+        "rows": 361,
+        "yes_wins": 361,
+        "win_pct": 100.0,
+        "avg_net_cents": 2.0
+      },
+      {
+        "yes_price": 95,
+        "rows": 308,
+        "yes_wins": 308,
+        "win_pct": 100.0,
+        "avg_net_cents": 4.0
+      },
+      {
+        "yes_price": 96,
+        "rows": 294,
+        "yes_wins": 294,
+        "win_pct": 100.0,
+        "avg_net_cents": 3.0
+      },
+      {
+        "yes_price": 6,
+        "rows": 274,
+        "yes_wins": 0,
+        "win_pct": 0.0,
+        "avg_net_cents": -7.0
+      }
+    ]
+  }
+}

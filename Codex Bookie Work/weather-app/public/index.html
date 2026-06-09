@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Lord bless you and keep you</title>
+    <link rel="stylesheet" href="/styles.css?v=20260530-weather-priority-sfo">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="mast">
+        <div>
+          <h1 class="blessing-title">
+            <span class="cross-mark" aria-hidden="true">✝️</span>
+            <span>The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace. <small>— Numbers 6:24-26</small></span>
+            <span class="cross-mark" aria-hidden="true">✝️</span>
+          </h1>
+        </div>
+        <div class="command-center">
+          <div class="actions">
+            <button id="startBtn" class="scan">Start Scanning</button>
+            <button id="stopBtn" class="stop">Stop</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <section class="panel results-panel">
+          <section class="paper-panel">
+            <div class="paper-head">
+              <div>
+                <h2>Scanning</h2>
+                <div class="trade-settings">
+                  <div class="lane-controls" aria-label="Scanning lanes">
+                    <button id="weatherLaneBtn" class="lane-switch on" type="button" aria-pressed="true" data-label="Weather Scanning">Weather Scanning ON</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="paper-stats">
+              <div><span id="paperStatus">Stopped</span><small>scan status</small></div>
+            </div>
+            <section id="weatherBeaconPanel" class="weather-beacon-panel" aria-label="Weather beacon live readings">
+              <div class="weather-beacon-head">
+                <div>
+                  <h3>Weather Beacons</h3>
+                  <p id="weatherBeaconSchedule">Waiting for first NWS station scan.</p>
+                </div>
+              </div>
+              <div id="weatherBeaconGrid" class="weather-beacon-grid"></div>
+            </section>
+            <div id="currentScanSummary" class="scanner-summary"></div>
+          </section>
+          <div id="results" class="results"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/app.js?v=20260530-weather-priority-sfo"></script>
+  </body>
+</html>

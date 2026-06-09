@@ -1,0 +1,229 @@
+{
+  "date": "2026-05-29",
+  "events": {
+    "by_direction": {
+      "down": 8836,
+      "up": 9372
+    },
+    "stale_by_direction": {
+      "down": {
+        "events": 8836,
+        "stale": 5553,
+        "stale_pct": 62.85
+      },
+      "up": {
+        "events": 9372,
+        "stale": 5953,
+        "stale_pct": 63.52
+      }
+    },
+    "top_exact_down_lags": [
+      {
+        "avg_10s_follow_cents": 0.4,
+        "btc_delta": -1,
+        "count": 5,
+        "distance": 133,
+        "hit_count": 2,
+        "hit_rate": 0.4,
+        "hours": {
+          "19": 5
+        },
+        "median_10s_follow_cents": 0,
+        "minute_left": 31,
+        "strikes": [
+          73300
+        ],
+        "yes": 88
+      },
+      {
+        "avg_10s_follow_cents": 0.333,
+        "btc_delta": -1,
+        "count": 6,
+        "distance": -67,
+        "hit_count": 2,
+        "hit_rate": 0.3333,
+        "hours": {
+          "19": 6
+        },
+        "median_10s_follow_cents": 0.0,
+        "minute_left": 31,
+        "strikes": [
+          73500
+        ],
+        "yes": 28
+      },
+      {
+        "avg_10s_follow_cents": 0,
+        "btc_delta": -1,
+        "count": 7,
+        "distance": 233,
+        "hit_count": 0,
+        "hit_rate": 0.0,
+        "hours": {
+          "19": 7
+        },
+        "median_10s_follow_cents": 0,
+        "minute_left": 31,
+        "strikes": [
+          73200
+        ],
+        "yes": 96
+      },
+      {
+        "avg_10s_follow_cents": 0,
+        "btc_delta": -1,
+        "count": 7,
+        "distance": 33,
+        "hit_count": 0,
+        "hit_rate": 0.0,
+        "hours": {
+          "19": 7
+        },
+        "median_10s_follow_cents": 0,
+        "minute_left": 31,
+        "strikes": [
+          73400
+        ],
+        "yes": 62
+      },
+      {
+        "avg_10s_follow_cents": 0,
+        "btc_delta": -1,
+        "count": 7,
+        "distance": -167,
+        "hit_count": 0,
+        "hit_rate": 0.0,
+        "hours": {
+          "19": 7
+        },
+        "median_10s_follow_cents": 0,
+        "minute_left": 31,
+        "strikes": [
+          73600
+        ],
+        "yes": 8
+      }
+    ],
+    "top_exact_up_lags": [
+      {
+        "avg_10s_follow_cents": 0.8,
+        "btc_delta": 1,
+        "count": 5,
+        "distance": -79,
+        "hit_count": 2,
+        "hit_rate": 0.4,
+        "hours": {
+          "19": 5
+        },
+        "median_10s_follow_cents": 0,
+        "minute_left": 10,
+        "strikes": [
+          73500
+        ],
+        "yes": 8
+      },
+      {
+        "avg_10s_follow_cents": 0,
+        "btc_delta": 1,
+        "count": 6,
+        "distance": 234,
+        "hit_count": 0,
+        "hit_rate": 0.0,
+        "hours": {
+          "19": 6
+        },
+        "median_10s_follow_cents": 0.0,
+        "minute_left": 31,
+        "strikes": [
+          73200
+        ],
+        "yes": 96
+      },
+      {
+        "avg_10s_follow_cents": 0,
+        "btc_delta": 1,
+        "count": 6,
+        "distance": 34,
+        "hit_count": 0,
+        "hit_rate": 0.0,
+        "hours": {
+          "19": 6
+        },
+        "median_10s_follow_cents": 0.0,
+        "minute_left": 31,
+        "strikes": [
+          73400
+        ],
+        "yes": 62
+      },
+      {
+        "avg_10s_follow_cents": 0,
+        "btc_delta": 1,
+        "count": 6,
+        "distance": -166,
+        "hit_count": 0,
+        "hit_rate": 0.0,
+        "hours": {
+          "19": 6
+        },
+        "median_10s_follow_cents": 0.0,
+        "minute_left": 31,
+        "strikes": [
+          73600
+        ],
+        "yes": 8
+      },
+      {
+        "avg_10s_follow_cents": 0,
+        "btc_delta": 1,
+        "count": 5,
+        "distance": 121,
+        "hit_count": 0,
+        "hit_rate": 0.0,
+        "hours": {
+          "19": 5
+        },
+        "median_10s_follow_cents": 0,
+        "minute_left": 10,
+        "strikes": [
+          73300
+        ],
+        "yes": 97
+      },
+      {
+        "avg_10s_follow_cents": 0,
+        "btc_delta": 1,
+        "count": 5,
+        "distance": -179,
+        "hit_count": 0,
+        "hit_rate": 0.0,
+        "hours": {
+          "19": 5
+        },
+        "median_10s_follow_cents": 0,
+        "minute_left": 10,
+        "strikes": [
+          73600
+        ],
+        "yes": 2
+      }
+    ],
+    "top_repeated_down_lags": [],
+    "top_repeated_up_lags": [],
+    "total_events": 18208
+  },
+  "scope": "YES ABOVE only, first 50 minutes of each contract hour: 60 to 10 minutes left",
+  "spot_sources": {
+    "Kalshi implied proxy from hourly strike ladder": 16337
+  },
+  "yes_rows": 50062,
+  "yes_rows_by_hour": {
+    "1": 918,
+    "2": 2762,
+    "3": 13265,
+    "4": 3074,
+    "12": 8485,
+    "13": 13099,
+    "19": 8459
+  }
+}

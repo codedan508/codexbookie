@@ -1,0 +1,7 @@
+﻿Kalshi Paper Trader
+
+Separate development copy for paper-trading/execution simulation.
+Created: 2026-05-23 01:10:59
+Source scanner preserved at: C:\Users\ocdtr\Documents\Codex\2026-05-22\build-a-working-local-app-called
+
+This folder runs separately from the manual scanner.

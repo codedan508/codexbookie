@@ -1,0 +1,139 @@
+8505841856 2026-05-30 05:33:37,458 webull.core.client ERROR HttpError occurred. Host:us-openapi-alb.uat.webullbroker.com SDK-Version:2.0.8 Request:{
+  "_version": "v2",
+  "_action_name": "/openapi/config",
+  "_protocol_type": "https",
+  "_accept_format": "JSON",
+  "_params": {},
+  "_method": "GET",
+  "_header": {
+    "x-version": "v2",
+    "Accept-Encoding": "gzip",
+    "x-app-key": "a88f2efed4dca02b9bc1a3cecbc35dba",
+    "x-timestamp": "2026-05-30T09:17:37Z",
+    "x-signature-version": "1.0",
+    "x-signature-algorithm": "HMAC-SHA1",
+    "x-signature-nonce": "76aa90cf-72cb-5dd5-88d1-f5ce9cb37b45",
+    "x-signature": "0UT6bP/wBMg6eJUcWOjt8JEynrw=",
+    "User-Agent": "WebullApiSDK (Darwin 25.4.0;arm64) Python/3.9.6 Core/2.0.8 python-requests/2.32.5",
+    "x-webull-client-source": "sdk"
+  },
+  "_body_params": null,
+  "_uri_pattern": null,
+  "_uri_params": null,
+  "_content": null,
+  "_extra_user_agent": {},
+  "string_to_sign": "",
+  "_request_connect_timeout": null,
+  "_request_read_timeout": null,
+  "endpoint": "us-openapi-alb.uat.webullbroker.com",
+  "_signer_spec": "<module 'webull.core.auth.algorithm.sha_hmac1' from '/Users/dan/Documents/OCD Treatment Center/Prediction Weather/.venv/lib/python3.9/site-packages/webull/core/auth/algorithm/sha_hmac1.py'>"
+} ClientException:SDK.HttpError HTTPSConnectionPool(host='us-openapi-alb.uat.webullbroker.com', port=443): Max retries exceeded with url: /openapi/config (Caused by NameResolutionError("HTTPSConnection(host='us-openapi-alb.uat.webullbroker.com', port=443): Failed to resolve 'us-openapi-alb.uat.webullbroker.com' ([Errno 8] nodename nor servname provided, or not known)"))
+8505841856 2026-05-30 05:33:41,648 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 05:49:15,484 webull.core.client ERROR ServerException occurred. Host:us-openapi-alb.uat.webullbroker.com SDK-Version:2.0.8 Request:{
+  "_version": "v2",
+  "_action_name": "/openapi/instrument/event/series/list",
+  "_protocol_type": "https",
+  "_accept_format": "JSON",
+  "_params": {
+    "category": "CLIMATE_WEATHER",
+    "page_size": 500
+  },
+  "_method": "GET",
+  "_header": {
+    "x-version": "v2",
+    "Accept-Encoding": "gzip",
+    "x-app-key": "a88f2efed4dca02b9bc1a3cecbc35dba",
+    "x-timestamp": "2026-05-30T09:33:41Z",
+    "x-signature-version": "1.0",
+    "x-signature-algorithm": "HMAC-SHA1",
+    "x-signature-nonce": "24b14e7a-ec25-5b0f-acda-f6b37ec50a64",
+    "x-signature": "IYHXKhrdxC0l+xHyZ/dAaF4yGzs=",
+    "User-Agent": "WebullApiSDK (Darwin 25.4.0;arm64) Python/3.9.6 Core/2.0.8 python-requests/2.32.5",
+    "x-webull-client-source": "sdk"
+  },
+  "_body_params": null,
+  "_uri_pattern": null,
+  "_uri_params": null,
+  "_content": null,
+  "_extra_user_agent": {},
+  "string_to_sign": "",
+  "_request_connect_timeout": null,
+  "_request_read_timeout": null,
+  "endpoint": "us-openapi-alb.uat.webullbroker.com",
+  "_signer_spec": "<module 'webull.core.auth.algorithm.sha_hmac1' from '/Users/dan/Documents/OCD Treatment Center/Prediction Weather/.venv/lib/python3.9/site-packages/webull/core/auth/algorithm/sha_hmac1.py'>"
+} Response:{'error_code': 'CLOCK_SKEW_EXCEEDED'} ServerException:HTTP Status: 403, Code: CLOCK_SKEW_EXCEEDED, Msg: , RequestID: 2ef90511-5316-475a-a89a-621016252a19
+8505841856 2026-05-30 05:49:15,484 webull.core.client ERROR get_response exception. {
+  "error_code": "CLOCK_SKEW_EXCEEDED",
+  "error_msg": "",
+  "http_status": 403,
+  "request_id": "2ef90511-5316-475a-a89a-621016252a19"
+}
+8505841856 2026-05-30 05:56:15,135 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 06:13:27,748 webull.core.client ERROR ServerException occurred. Host:us-openapi-alb.uat.webullbroker.com SDK-Version:2.0.8 Request:{
+  "_version": "v2",
+  "_action_name": "/openapi/instrument/event/market/list",
+  "_protocol_type": "https",
+  "_accept_format": "JSON",
+  "_params": {
+    "series_symbol": "KXHIGHTNOLA",
+    "page_size": 100
+  },
+  "_method": "GET",
+  "_header": {
+    "x-version": "v2",
+    "Accept-Encoding": "gzip",
+    "x-app-key": "a88f2efed4dca02b9bc1a3cecbc35dba",
+    "x-timestamp": "2026-05-30T09:56:52Z",
+    "x-signature-version": "1.0",
+    "x-signature-algorithm": "HMAC-SHA1",
+    "x-signature-nonce": "b0cf82b7-0776-5e4e-8742-a20283be8efa",
+    "x-signature": "C6F2Yxn8fl3jBOlre0K4As0x+a0=",
+    "User-Agent": "WebullApiSDK (Darwin 25.4.0;arm64) Python/3.9.6 Core/2.0.8 python-requests/2.32.5",
+    "x-webull-client-source": "sdk"
+  },
+  "_body_params": null,
+  "_uri_pattern": null,
+  "_uri_params": null,
+  "_content": null,
+  "_extra_user_agent": {},
+  "string_to_sign": "",
+  "_request_connect_timeout": null,
+  "_request_read_timeout": null,
+  "endpoint": "us-openapi-alb.uat.webullbroker.com",
+  "_signer_spec": "<module 'webull.core.auth.algorithm.sha_hmac1' from '/Users/dan/Documents/OCD Treatment Center/Prediction Weather/.venv/lib/python3.9/site-packages/webull/core/auth/algorithm/sha_hmac1.py'>"
+} Response:{'error_code': 'CLOCK_SKEW_EXCEEDED'} ServerException:HTTP Status: 403, Code: CLOCK_SKEW_EXCEEDED, Msg: , RequestID: c2eb8b79-945a-43ae-a205-448873ef9599
+8505841856 2026-05-30 06:53:11,201 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False
+8505841856 2026-05-30 06:57:06,644 webull.core.client ERROR HttpError occurred. Host:us-openapi-alb.uat.webullbroker.com SDK-Version:2.0.8 Request:{
+  "_version": "v2",
+  "_action_name": "/openapi/market-data/event/snapshot",
+  "_protocol_type": "https",
+  "_accept_format": "JSON",
+  "_params": {
+    "symbols": "KXHIGHTSATX-26MAY30-B91.5,KXHIGHTSATX-26MAY30-B89.5,KXHIGHTSATX-26MAY31-T95,KXHIGHTSATX-26MAY31-T88,KXHIGHTSATX-26MAY31-B94.5,KXHIGHTSATX-26MAY31-B92.5,KXHIGHTSATX-26MAY31-B90.5,KXHIGHTSATX-26MAY31-B88.5,KXHIGHTBOS-26MAY30-T61,KXHIGHTBOS-26MAY30-T54,KXHIGHTBOS-26MAY30-B60.5,KXHIGHTBOS-26MAY30-B58.5,KXHIGHTBOS-26MAY30-B56.5,KXHIGHTBOS-26MAY30-B54.5,KXHIGHTBOS-26MAY31-T73,KXHIGHTBOS-26MAY31-T66,KXHIGHTBOS-26MAY31-B72.5,KXHIGHTBOS-26MAY31-B70.5,KXHIGHTBOS-26MAY31-B68.5,KXHIGHTBOS-26MAY31-B66.5,KXHIGHTOKC-26MAY30-T97,KXHIGHTOKC-26MAY30-T90,KXHIGHTOKC-26MAY30-B96.5,KXHIGHTOKC-26MAY30-B94.5,KXHIGHTOKC-26MAY30-B92.5,KXHIGHTOKC-26MAY30-B90.5,KXHIGHTOKC-26MAY31-T95,KXHIGHTOKC-26MAY31-T102,KXHIGHTOKC-26MAY31-B99.5,KXHIGHTOKC-26MAY31-B97.5,KXHIGHTOKC-26MAY31-B95.5,KXHIGHTOKC-26MAY31-B101.5,KXHIGHPHIL-26MAY29-T83,KXHIGHPHIL-26MAY29-T76,KXHIGHPHIL-26MAY29-B82.5,KXHIGHPHIL-26MAY29-B80.5,KXHIGHPHIL-26MAY29-B78.5,KXHIGHPHIL-26MAY29-B76.5",
+    "category": "US_EVENT"
+  },
+  "_method": "GET",
+  "_header": {
+    "x-version": "v2",
+    "Accept-Encoding": "gzip",
+    "x-app-key": "a88f2efed4dca02b9bc1a3cecbc35dba",
+    "x-timestamp": "2026-05-30T10:53:45Z",
+    "x-signature-version": "1.0",
+    "x-signature-algorithm": "HMAC-SHA1",
+    "x-signature-nonce": "71500e77-8504-5a1f-b1b3-2aaa91b2247e",
+    "x-signature": "kqD2xABz5Pt44sSFRKIQl8dW8QE=",
+    "User-Agent": "WebullApiSDK (Darwin 25.4.0;arm64) Python/3.9.6 Core/2.0.8 python-requests/2.32.5",
+    "x-webull-client-source": "sdk"
+  },
+  "_body_params": null,
+  "_uri_pattern": null,
+  "_uri_params": null,
+  "_content": null,
+  "_extra_user_agent": {},
+  "string_to_sign": "",
+  "_request_connect_timeout": null,
+  "_request_read_timeout": null,
+  "endpoint": "us-openapi-alb.uat.webullbroker.com",
+  "_signer_spec": "<module 'webull.core.auth.algorithm.sha_hmac1' from '/Users/dan/Documents/OCD Treatment Center/Prediction Weather/.venv/lib/python3.9/site-packages/webull/core/auth/algorithm/sha_hmac1.py'>"
+} ClientException:SDK.HttpError ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+8505841856 2026-05-30 06:57:10,367 webull.core.http.initializer.client_initializer INFO _check_token_enable result is False

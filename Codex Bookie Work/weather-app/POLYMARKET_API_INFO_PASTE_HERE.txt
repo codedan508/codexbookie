@@ -1,0 +1,9 @@
+POLYMARKET API SETUP
+
+Paste your Polymarket access key / key ID and secret key below.
+Save this file, close it, then tell Codex: I saved it
+
+Do not paste either value into chat.
+
+POLYMARKET_ACCESS_KEY=
+POLYMARKET_SECRET_KEY=
