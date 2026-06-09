@@ -107,19 +107,20 @@ server.listen(PORT, HOST, () => {
 
 async function dashboard() {
   const reports = await Promise.all(ATTACHED_APPS.map(readAttachedReport));
-  const candidates = reports.flatMap((report) => report.candidates).sort(compareCandidates);
+  const byApp = reports.map((report) => ({
+    appId: report.app.id,
+    appName: report.app.name,
+    snapshot: report.app.snapshot,
+    status: report.status,
+    best: report.candidates.slice().sort(compareCandidates).slice(0, 5)
+  }));
+  const candidates = byApp.flatMap((group) => group.best).sort(compareCandidates);
   return {
     generatedAt: new Date().toISOString(),
     minGames: MIN_GAMES,
     apps: reports.map(({ candidates, ...report }) => ({ ...report, candidateCount: candidates.length })),
-    best: candidates.slice(0, 12),
-    byApp: reports.map((report) => ({
-      appId: report.app.id,
-      appName: report.app.name,
-      snapshot: report.app.snapshot,
-      status: report.status,
-      best: report.candidates.slice().sort(compareCandidates).slice(0, 5)
-    }))
+    best: candidates,
+    byApp
   };
 }
 

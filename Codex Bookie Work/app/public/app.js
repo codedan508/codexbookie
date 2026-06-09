@@ -26,8 +26,11 @@ let settings = null;
 let stateRequestInFlight = null;
 let slateRequestInFlight = null;
 let currentMatches = [];
+let frameHeightTimer = null;
 
 init();
+window.addEventListener("load", queueFrameHeightReport);
+window.addEventListener("resize", queueFrameHeightReport);
 
 async function init() {
   els.contracts.addEventListener("change", saveSettings);
@@ -39,6 +42,20 @@ async function init() {
   els.getReports.addEventListener("click", getReports);
   await loadState();
   await getReports();
+  queueFrameHeightReport();
+}
+
+function queueFrameHeightReport() {
+  if (window.parent === window) return;
+  window.clearTimeout(frameHeightTimer);
+  frameHeightTimer = window.setTimeout(reportFrameHeight, 40);
+}
+
+function reportFrameHeight() {
+  if (window.parent === window) return;
+  const shell = document.querySelector(".shell");
+  const height = shell ? shell.getBoundingClientRect().height : document.documentElement.scrollHeight;
+  window.parent.postMessage({ type: "codex-bookie-height", height: height + 24 }, "http://localhost:2040");
 }
 
 async function loadState(options = {}) {
@@ -57,6 +74,7 @@ async function loadStateInner({ includeSlate = true } = {}) {
   renderOrders(state.openOrdersLive || [], state.accountError || "");
   renderPositions(state.positionsLive || [], state.accountError || "");
   if (includeSlate) await loadMatches();
+  queueFrameHeightReport();
   return state;
 }
 
@@ -83,6 +101,7 @@ function renderOrders(orders, error) {
   const entries = Array.isArray(orders) ? orders : Object.values(orders || {});
   els.ordersCount.textContent = `${entries.length} open`;
   els.orders.textContent = entries.length ? entries.slice(-12).map(formatOrder).join("\n\n") : "No open orders.";
+  queueFrameHeightReport();
 }
 
 function formatOrder(order) {
@@ -114,6 +133,7 @@ function renderPositions(positions, error) {
   }
   els.positionsStatus.textContent = `${positions.length} open`;
   els.positions.textContent = positions.length ? positions.map(formatPosition).join("\n\n") : "No open positions.";
+  queueFrameHeightReport();
 }
 
 function formatPosition(position) {
@@ -315,14 +335,17 @@ async function loadMatchesInner() {
     if (!matches.length) {
       els.slate.textContent = "No matching bets found.";
       updateOfferButton();
+      queueFrameHeightReport();
       return;
     }
     els.slate.innerHTML = matches.map(renderMatchLine).join("");
     updateOfferButton();
+    queueFrameHeightReport();
   } catch (error) {
     els.slateStatus.textContent = "";
     els.slate.textContent = cleanError(error);
     updateOfferButton();
+    queueFrameHeightReport();
   }
 }
 
@@ -361,6 +384,7 @@ function renderAttachedReports(data = {}) {
     const group = groups.find((item) => item.appId === report.app?.id);
     return renderAttachedReport(report, group);
   }).join("");
+  queueFrameHeightReport();
 }
 
 function renderAttachedReport(report, group) {

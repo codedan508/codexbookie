@@ -106,6 +106,9 @@ export async function report() {
 function scoreTruthThresholdSummary(rows) {
   const games = uniqueSettledGames(rows);
   const totalGames = games.length;
+  const latestDate = games.reduce((max, game) => game.date > max ? game.date : max, "");
+  const weeklyGames = latestDate ? games.filter((game) => game.date > addDays(latestDate, -7)) : [];
+  const monthlyGames = latestDate ? games.filter((game) => game.date > addDays(latestDate, -30)) : [];
   const thresholds = [];
   const opportunities = [];
   if (!totalGames) {
@@ -119,8 +122,24 @@ function scoreTruthThresholdSummary(rows) {
   for (let threshold = 3.5; threshold <= 15.5; threshold += 1) {
     const overWins = games.filter((game) => game.totalRuns > threshold).length;
     const underWins = totalGames - overWins;
-    thresholds.push(scoreTruthSideRecord({ side: "Over", threshold, wins: overWins, losses: underWins, totalGames }));
-    thresholds.push(scoreTruthSideRecord({ side: "Under", threshold, wins: underWins, losses: overWins, totalGames }));
+    thresholds.push(scoreTruthSideRecord({
+      side: "Over",
+      threshold,
+      wins: overWins,
+      losses: underWins,
+      totalGames,
+      weeklyEvPct: scoreTruthRecentEv(weeklyGames, "Over", threshold),
+      monthlyEvPct: scoreTruthRecentEv(monthlyGames, "Over", threshold)
+    }));
+    thresholds.push(scoreTruthSideRecord({
+      side: "Under",
+      threshold,
+      wins: underWins,
+      losses: overWins,
+      totalGames,
+      weeklyEvPct: scoreTruthRecentEv(weeklyGames, "Under", threshold),
+      monthlyEvPct: scoreTruthRecentEv(monthlyGames, "Under", threshold)
+    }));
   }
 
   const qualified = thresholds
@@ -159,7 +178,15 @@ function uniqueSettledGames(rows) {
   return [...byGame.values()];
 }
 
-function scoreTruthSideRecord({ side, threshold, wins, losses, totalGames }) {
+function scoreTruthRecentEv(games, side, threshold) {
+  if (!games.length) return null;
+  const wins = games.filter((game) => side === "Over" ? game.totalRuns > threshold : game.totalRuns <= threshold).length;
+  const fairCents = wins / games.length * 100;
+  const maxEntryCents = Math.max(0, fairCents - 3);
+  return evPct(wins / games.length, maxEntryCents);
+}
+
+function scoreTruthSideRecord({ side, threshold, wins, losses, totalGames, weeklyEvPct = null, monthlyEvPct = null }) {
   const fairCents = wins / totalGames * 100;
   const maxEntryCents = Math.max(0, fairCents - 3);
   return {
@@ -181,6 +208,8 @@ function scoreTruthSideRecord({ side, threshold, wins, losses, totalGames }) {
     winRatePct: fairCents,
     avgOdds: roundOne(maxEntryCents),
     evPct: evPct(wins / totalGames, maxEntryCents),
+    weeklyEvDeltaPct: weeklyEvPct,
+    monthlyEvDeltaPct: monthlyEvPct,
     winsOverBreakEven: roundOne(wins - (maxEntryCents / 100 * totalGames)),
     pattern: "score truth: MLB final-score baseline, live price must be below max entry"
   };

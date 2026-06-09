@@ -91,7 +91,6 @@ button:disabled {
   justify-content: flex-end;
 }
 
-.updated-band,
 .panel,
 .match-card,
 .app-card {
@@ -101,14 +100,6 @@ button:disabled {
   box-shadow: 0 0 0 1px rgba(31, 91, 196, 0.15), 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
-.updated-band {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 18px;
-  padding: 12px 16px;
-}
-
-.updated-band span,
 dt,
 .source,
 .pair,
@@ -116,11 +107,6 @@ dt,
 .source-note,
 .mini-list span {
   color: var(--muted);
-}
-
-.updated-band strong {
-  margin-left: 10px;
-  font-size: 16px;
 }
 
 .panel {

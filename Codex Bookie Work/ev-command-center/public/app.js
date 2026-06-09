@@ -1,5 +1,4 @@
 const els = {
-  updatedAt: document.querySelector("#updatedAt"),
   ruleNote: document.querySelector("#ruleNote"),
   bestGrid: document.querySelector("#bestGrid"),
   matchCount: document.querySelector("#matchCount"),
@@ -12,11 +11,24 @@ const els = {
 };
 
 let lastFoundMatches = [];
+let bookieFrameHeight = 1500;
 
 els.refreshReports.addEventListener("click", () => loadDashboard("/api/refresh-reports", "POST"));
 els.matchingBets.addEventListener("click", runMatchingBets);
 els.getDataAll.addEventListener("click", runGetDataAll);
 loadDashboard();
+
+window.addEventListener("message", (event) => {
+  if (event.origin !== "http://localhost:2010") return;
+  const data = event.data || {};
+  if (data.type !== "codex-bookie-height") return;
+  const height = Number(data.height);
+  if (!Number.isFinite(height) || height < 600) return;
+  const nextHeight = Math.min(Math.ceil(height), 5000);
+  if (Math.abs(nextHeight - bookieFrameHeight) < 12) return;
+  bookieFrameHeight = nextHeight;
+  els.bookieFrame.style.height = `${bookieFrameHeight}px`;
+});
 
 async function loadDashboard(url = "/api/dashboard", method = "GET") {
   setBusy(true, method === "POST" ? "Refreshing..." : "");
@@ -69,7 +81,6 @@ function formatMatchStatus(data) {
 }
 
 function renderDashboard(data) {
-  els.updatedAt.textContent = formatDateTime(data.generatedAt);
   els.ruleNote.textContent = `${data.minGames}+ games minimum`;
   els.bestGrid.innerHTML = data.best.length
     ? `<div class="source-lines">${data.best.map(renderBestLine).join("")}</div>`
@@ -78,18 +89,27 @@ function renderDashboard(data) {
 }
 
 function renderBestLine(item) {
+  const hasWeekly = item.weeklyEvPct !== null && item.weeklyEvPct !== undefined && Number.isFinite(Number(item.weeklyEvPct));
+  const hasMonthly = item.monthlyEvPct !== null && item.monthlyEvPct !== undefined && Number.isFinite(Number(item.monthlyEvPct));
   const recent = [
-    Number.isFinite(Number(item.weeklyEvPct)) ? `<span class="${tone(item.weeklyEvPct)}">week ${formatSigned(item.weeklyEvPct)}</span>` : "",
-    Number.isFinite(Number(item.monthlyEvPct)) ? `<span class="${tone(item.monthlyEvPct)}">month ${formatSigned(item.monthlyEvPct)}</span>` : ""
+    hasWeekly ? `<span class="${tone(item.weeklyEvPct)}">week ${formatSigned(item.weeklyEvPct)}</span>` : "",
+    hasMonthly ? `<span class="${tone(item.monthlyEvPct)}">month ${formatSigned(item.monthlyEvPct)}</span>` : ""
   ].join("");
   return `
     <p class="source-line">
-      <b>${escapeHtml(item.label)}</b>
+      <b>${escapeHtml(formatDisplayLabel(item.label))}</b>
       <span>${escapeHtml(item.appName)} · ${escapeHtml(item.gamesLabel || `${item.games}`)} · ${escapeHtml(record(item))}</span>
-      <span class="${tone(item.evPct)}">annual ${formatSigned(item.evPct)} EV</span>
+      <span class="${tone(item.evPct)}">season ${formatSigned(item.evPct)} EV</span>
       ${recent}
     </p>
   `;
+}
+
+function formatDisplayLabel(label) {
+  return String(label || "").replace(/<=\s*(\d+(?:\.\d+)?)c/gi, (_, value) => {
+    const cents = Number(value);
+    return Number.isFinite(cents) ? `< ${Math.floor(cents) + 1}c` : `< ${value}c`;
+  });
 }
 
 function renderMatchGroups(matches) {
