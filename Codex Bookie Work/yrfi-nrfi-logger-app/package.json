@@ -1,0 +1,12 @@
+{
+  "name": "codex-bookie-yrfi-nrfi-logger",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Read-only MLB YRFI/NRFI 3am bucket EV tracker and CSV exporter.",
+  "scripts": {
+    "start": "node src/server.js",
+    "check": "node --check src/server.js && node --check src/edge-engine.js && node --check scripts/build-yrfi-nrfi-2026.js",
+    "build:yrfi": "node scripts/build-yrfi-nrfi-2026.js"
+  }
+}

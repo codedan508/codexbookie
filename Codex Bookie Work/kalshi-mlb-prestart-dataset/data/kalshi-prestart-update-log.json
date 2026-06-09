@@ -1,0 +1,134 @@
+[
+  {
+    "ranAt": "2026-06-08T23:23:48.905Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 977,
+    "rowsAfter": 977,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:20:50.019Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 977,
+    "rowsAfter": 977,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T22:24:31.439Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 29. Blank before fill: 30. Attempted: 30. Polymarket filled: 29. Remaining blank: 1.",
+    "rowsBefore": 948,
+    "rowsAfter": 977,
+    "rowsAdded": 29,
+    "missingRows": 1,
+    "stdout": "2026-06-07 Cincinnati Reds @ St. Louis Cardinals: filled from Polymarket 57.5/42.5\n2026-06-07 Cleveland Guardians @ Texas Rangers: filled from Polymarket 56.5/43.5\n2026-06-07 Kansas City Royals @ Minnesota Twins: filled from Polymarket 47.5/52.5\n2026-06-07 Los Angeles Angels @ Los Angeles Dodgers: filled from Polymarket 69.5/30.5\n2026-06-07 Milwaukee Brewers @ Colorado Rockies: filled from Polymarket 37.5/62.5\n2026-06-07 New York Mets @ San Diego Padres: filled from Polymarket 49.5/50.5\n2026-06-07 Pittsburgh Pirates @ Atlanta Braves: filled from Polymarket 57.5/42.5\n2026-06-07 San Francisco Giants @ Chicago Cubs: filled from Polymarket 54.5/45.5\n2026-06-07 Seattle Mariners @ Detroit Tigers: filled from Polymarket 52.5/47.5\n2026-06-07 Tampa Bay Rays @ Miami Marlins: filled from Polymarket 49.5/50.5\n2026-06-07 Washington Nationals @ Arizona Diamondbacks: filled from Polymarket 55.5/44.5\nDone. Existing rows preserved. New MLB rows added: 29. Blank before fill: 30. Attempted: 30. Polymarket filled: 29. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-06T13:44:12.529Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 15. Blank before fill: 16. Attempted: 16. Polymarket filled: 15. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 948,
+    "rowsAdded": 15,
+    "missingRows": 1,
+    "stdout": "2026-06-05 Cincinnati Reds @ St. Louis Cardinals: filled from Polymarket 56.5/43.5\n2026-06-05 Cleveland Guardians @ Texas Rangers: filled from Polymarket 46.5/53.5\n2026-06-05 Kansas City Royals @ Minnesota Twins: filled from Polymarket 51.5/48.5\n2026-06-05 Los Angeles Angels @ Los Angeles Dodgers: filled from Polymarket 63.5/36.5\n2026-06-05 Milwaukee Brewers @ Colorado Rockies: filled from Polymarket 41.5/58.5\n2026-06-05 New York Mets @ San Diego Padres: filled from Polymarket 54.5/45.5\n2026-06-05 Pittsburgh Pirates @ Atlanta Braves: filled from Polymarket 57.5/42.5\n2026-06-05 San Francisco Giants @ Chicago Cubs: filled from Polymarket 61.5/38.5\n2026-06-05 Seattle Mariners @ Detroit Tigers: filled from Polymarket 47.5/52.5\n2026-06-05 Tampa Bay Rays @ Miami Marlins: filled from Polymarket 45.5/54.5\n2026-06-05 Washington Nationals @ Arizona Diamondbacks: filled from Polymarket 54.5/45.5\nDone. Existing rows preserved. New MLB rows added: 15. Blank before fill: 16. Attempted: 16. Polymarket filled: 15. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T21:36:01.076Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 933,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-04; latest completed date 2026-06-04.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T21:35:00.045Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 933,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-04; latest completed date 2026-06-04.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T21:34:59.908Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 933,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-04; latest completed date 2026-06-04.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T21:34:59.727Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 933,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-04; latest completed date 2026-06-04.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T21:34:59.563Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 933,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-04; latest completed date 2026-06-04.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T21:34:58.813Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 933,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-04; latest completed date 2026-06-04.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T21:34:51.797Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 933,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-04; latest completed date 2026-06-04.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T18:33:02.432Z",
+    "status": "completed",
+    "message": "Done. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "rowsBefore": 933,
+    "rowsAfter": 933,
+    "rowsAdded": 0,
+    "missingRows": 1,
+    "stdout": "No new MLB dates to append. Latest stored date 2026-06-04; latest completed date 2026-06-04.\n2026-05-07 New York Mets @ Colorado Rockies: missing - Polymarket fill failed: No matching Polymarket MLB event.\nDone. Existing rows preserved. New MLB rows added: 0. Blank before fill: 1. Attempted: 1. Polymarket filled: 0. Remaining blank: 1.",
+    "stderr": ""
+  }
+]

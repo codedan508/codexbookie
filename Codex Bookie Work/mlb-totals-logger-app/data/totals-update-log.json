@@ -1,0 +1,57 @@
+[
+  {
+    "ranAt": "2026-06-08T23:23:49.223Z",
+    "status": "completed",
+    "message": "Wrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "rowsBefore": 1274,
+    "rowsAfter": 1397,
+    "rowsAdded": 123,
+    "missingRows": 238,
+    "stdout": "2026-05-31: 44 total-line rows added\n2026-06-01: 18 total-line rows added\n2026-06-02: 30 total-line rows added\n2026-06-03: 33 total-line rows added\n2026-06-04: 18 total-line rows added\n2026-06-05: 20 total-line rows added\n2026-06-06: 42 total-line rows added\n2026-06-07: 43 total-line rows added\nDone. Ledger rows: 1397. Missing audit rows: 238. Summary buckets: 30.\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_game_line_ledger.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_bucket_ev_summary.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:20:50.485Z",
+    "status": "completed",
+    "message": "Wrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "rowsBefore": 1274,
+    "rowsAfter": 1397,
+    "rowsAdded": 123,
+    "missingRows": 238,
+    "stdout": "2026-05-31: 44 total-line rows added\n2026-06-01: 18 total-line rows added\n2026-06-02: 30 total-line rows added\n2026-06-03: 33 total-line rows added\n2026-06-04: 18 total-line rows added\n2026-06-05: 20 total-line rows added\n2026-06-06: 42 total-line rows added\n2026-06-07: 43 total-line rows added\nDone. Ledger rows: 1397. Missing audit rows: 238. Summary buckets: 30.\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_game_line_ledger.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_bucket_ev_summary.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T00:32:44.025Z",
+    "status": "completed",
+    "message": "Wrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "rowsBefore": 1274,
+    "rowsAfter": 1274,
+    "rowsAdded": 0,
+    "missingRows": 227,
+    "stdout": "2026-05-27: 39 total-line rows added\n2026-05-28: 15 total-line rows added\n2026-05-29: 27 total-line rows added\n2026-05-30: 33 total-line rows added\n2026-05-31: 44 total-line rows added\n2026-06-01: 18 total-line rows added\n2026-06-02: 30 total-line rows added\n2026-06-03: 33 total-line rows added\nDone. Ledger rows: 1274. Missing audit rows: 227. Summary buckets: 29.\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_game_line_ledger.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_bucket_ev_summary.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-04T05:50:52.870Z",
+    "status": "completed",
+    "message": "Wrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "rowsBefore": 1241,
+    "rowsAfter": 1274,
+    "rowsAdded": 33,
+    "missingRows": 227,
+    "stdout": "2026-05-27: 39 total-line rows added\n2026-05-28: 15 total-line rows added\n2026-05-29: 27 total-line rows added\n2026-05-30: 33 total-line rows added\n2026-05-31: 44 total-line rows added\n2026-06-01: 18 total-line rows added\n2026-06-02: 30 total-line rows added\n2026-06-03: 33 total-line rows added\nDone. Ledger rows: 1274. Missing audit rows: 227. Summary buckets: 29.\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_game_line_ledger.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_bucket_ev_summary.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-04T05:48:19.738Z",
+    "status": "completed",
+    "message": "Wrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "rowsBefore": 1241,
+    "rowsAfter": 1274,
+    "rowsAdded": 33,
+    "missingRows": 227,
+    "stdout": "2026-05-27: 39 total-line rows added\n2026-05-28: 15 total-line rows added\n2026-05-29: 27 total-line rows added\n2026-05-30: 33 total-line rows added\n2026-05-31: 44 total-line rows added\n2026-06-01: 18 total-line rows added\n2026-06-02: 30 total-line rows added\n2026-06-03: 33 total-line rows added\nDone. Ledger rows: 1274. Missing audit rows: 227. Summary buckets: 29.\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_game_line_ledger.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_bucket_ev_summary.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/mlb-totals-logger-app/data/mlb_2026_totals_3am_missing.csv",
+    "stderr": ""
+  }
+]

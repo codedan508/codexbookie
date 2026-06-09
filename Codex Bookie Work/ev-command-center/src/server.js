@@ -1,20 +1,57 @@
 import http from "node:http";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { spawn } from "node:child_process";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const APP_DIR = path.resolve(__dirname, "..");
 const PUBLIC_DIR = path.join(APP_DIR, "public");
-const HOST = process.env.HOST || "127.0.0.1";
+const HOST = process.env.HOST || "localhost";
 const PORT = Number(process.env.EV_COMMAND_CENTER_PORT || 2040);
 const MIN_GAMES = 50;
-const MAKER_APP_BASE = process.env.MAKER_APP_BASE || "http://127.0.0.1:2010";
+const MIN_BUY_PRICE_CENTS = 30;
+const MAKER_APP_BASE = process.env.MAKER_APP_BASE || "http://localhost:2010";
+
+
+const DEPENDENT_APPS = [
+  { name: "Maker Bot", port: 2010, cwd: path.resolve(APP_DIR, "..", "app"), cmd: "node", args: ["src/server.js"] },
+  { name: "MLB Moneyline", port: 2030, cwd: path.resolve(APP_DIR, "..", "kalshi-mlb-prestart-dataset"), cmd: "node", args: ["src/server.js"], env: { HOST: "localhost" } },
+  { name: "MLB YRFI/NRFI", port: 2021, cwd: path.resolve(APP_DIR, "..", "yrfi-nrfi-logger-app"), cmd: "node", args: ["src/server.js"], env: { HOST: "localhost", PORT: "2021" } },
+  { name: "MLB Totals", port: 2032, cwd: path.resolve(APP_DIR, "..", "mlb-totals-logger-app"), cmd: "node", args: ["src/server.js"], env: { HOST: "localhost", PORT: "2032" } }
+];
+
+const childApps = [];
+
+async function ensureDependentApps() {
+  await Promise.all(DEPENDENT_APPS.map(async (app) => {
+    if (await isPortAlive(app.port)) return;
+    const child = spawn(app.cmd, app.args, {
+      cwd: app.cwd,
+      env: { ...process.env, ...(app.env || {}) },
+      stdio: "ignore",
+      detached: false
+    });
+    childApps.push(child);
+    child.unref();
+  }));
+}
+
+function isPortAlive(port) {
+  return new Promise((resolve) => {
+    const req = http.get({ host: "localhost", port, path: "/", timeout: 700 }, (res) => {
+      res.resume();
+      resolve(true);
+    });
+    req.on("error", () => resolve(false));
+    req.on("timeout", () => { req.destroy(); resolve(false); });
+  });
+}
 
 const ATTACHED_APPS = [
-  { id: "mlb-moneyline-start", name: "MLB Moneyline", authority: "MLB", oddsFeed: "Polymarket", snapshot: "game start", baseUrl: "http://127.0.0.1:2030" },
-  { id: "mlb-yrfi-nrfi-3am", name: "MLB YRFI/NRFI", authority: "MLB", oddsFeed: "Polymarket", snapshot: "current model", baseUrl: "http://127.0.0.1:2021" },
-  { id: "mlb-totals-start", name: "MLB Totals", authority: "MLB", oddsFeed: "Polymarket", snapshot: "game start", baseUrl: "http://127.0.0.1:2032" }
+  { id: "mlb-moneyline-start", name: "MLB Moneyline", authority: "MLB", oddsFeed: "Polymarket", snapshot: "game start", baseUrl: "http://localhost:2030" },
+  { id: "mlb-yrfi-nrfi-3am", name: "MLB YRFI/NRFI", authority: "MLB", oddsFeed: "Polymarket", snapshot: "current model", baseUrl: "http://localhost:2021" },
+  { id: "mlb-totals-start", name: "MLB Totals", authority: "MLB", oddsFeed: "Polymarket", snapshot: "game start", baseUrl: "http://localhost:2032" }
 ];
 
 const server = http.createServer(async (req, res) => {
@@ -63,8 +100,9 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
+await ensureDependentApps();
 server.listen(PORT, HOST, () => {
-  console.log(`EV Command Center running at http://${HOST}:${PORT}`);
+  console.log(`EV Command Center running at http://localhost:${PORT}`);
 });
 
 async function dashboard() {
@@ -86,8 +124,9 @@ async function dashboard() {
 }
 
 async function matchingBets() {
-  const board = await dashboard();
-  const criteria = board.best.map(candidateToCriteria).filter(Boolean);
+  const reports = await Promise.all(ATTACHED_APPS.map(readAttachedReport));
+  const candidates = reports.flatMap((report) => report.candidates).sort(compareCandidates);
+  const criteria = candidates.map(candidateToCriteria).filter(Boolean);
   const events = await currentPolymarketMlbEvents();
   const matches = [];
   for (const event of events) {
@@ -113,9 +152,12 @@ async function matchingBets() {
     generatedAt: new Date().toISOString(),
     matchDate: currentMatchDate(),
     criteriaCount: criteria.length,
+    criteriaByType: countBy(criteria, (criterion) => criterion.type),
     eventsChecked: events.length,
     rawMatches: bestByGameAndSystem.length,
+    rawMatchesByType: countBy(bestByGameAndSystem, (match) => match.marketType),
     hiddenLiveExposure: bestByGameAndSystem.length - placeable.length,
+    matchesByType: countBy(placeable, (match) => match.marketType),
     matches: placeable.slice(0, 80)
   };
 }
@@ -201,7 +243,7 @@ function candidateToCriteria(item) {
   if (item.appId === "mlb-totals-start" && item.sourceModel === "score-truth") {
     const line = Number(item.line ?? item.totalLine);
     const maxPrice = Number(item.maxPrice);
-    if (!item.side || !Number.isFinite(line) || !Number.isFinite(maxPrice)) return null;
+    if (!item.side || !Number.isFinite(line) || !Number.isFinite(maxPrice) || maxPrice < MIN_BUY_PRICE_CENTS) return null;
     return {
       type: "totals",
       side: titleCase(item.side),
@@ -291,7 +333,7 @@ function etDate(date) {
 }
 
 function matchMarket(event, market, criterion) {
-  const marketType = String(market.sportsMarketType || "").toLowerCase();
+  const marketType = normalizedMarketType(market.sportsMarketType || market.marketType || market.type || "");
   if (criterion.type !== marketType) return null;
   if (criterion.type === "totals" && Number(market.line) !== criterion.line) return null;
 
@@ -302,6 +344,7 @@ function matchMarket(event, market, criterion) {
   const outcomeIndex = outcomeIndexFor(event, outcomes, criterion);
   if (outcomeIndex < 0) return null;
   const price = cleanCents(prices[outcomeIndex]);
+  if (!Number.isFinite(price) || price < MIN_BUY_PRICE_CENTS) return null;
   if (Number.isFinite(criterion.maxPrice)) {
     if (!(price <= criterion.maxPrice)) return null;
   } else if (!priceInBucket(price, criterion.low, criterion.high)) {
@@ -346,10 +389,23 @@ function outcomeIndexFor(event, outcomes, criterion) {
   if (criterion.type === "moneyline") {
     const teamName = teamForSide(event, criterion.side);
     if (!teamName) return -1;
-    const normalized = normalizeText(teamName);
-    return outcomes.findIndex((outcome) => normalizeText(outcome) === normalized);
+    return outcomes.findIndex((outcome) => outcomeMatchesTeam(outcome, teamName));
   }
   return -1;
+}
+
+function normalizedMarketType(value) {
+  const raw = String(value || "").toLowerCase();
+  if (["first_inning_run", "yrfi", "nrfi", "firstinningrun"].includes(raw)) return "nrfi";
+  return raw;
+}
+
+function outcomeMatchesTeam(outcome, teamName) {
+  const outcomeText = normalizeText(outcome);
+  const teamText = normalizeText(teamName);
+  if (!outcomeText || !teamText) return false;
+  if (outcomeText === teamText) return true;
+  return outcomeText.endsWith(teamText) || teamText.endsWith(outcomeText);
 }
 
 function teamForSide(event, side) {
@@ -390,19 +446,48 @@ async function readAttachedReport(app) {
     candidates: []
   };
   try {
+    if (app.id === "mlb-moneyline-start" || app.id === "mlb-yrfi-nrfi-3am") {
+      const report = await readAttachedReportDirect(app);
+      applyAttachedReport(result, app, report);
+      return result;
+    }
     const report = await fetchJson(`${app.baseUrl}/api/report`, { timeoutMs: 12_000 });
-    result.status = "online";
-    result.latestPullDate = report.latestPullDate || "";
-    result.lastUpdatedAt = report.lastUpdatedAt || "";
-    result.rowCount = Number(report.settledRows || report.assignedRows || report.totalRows || 0);
-    result.filledRows = Number(report.filledRows || result.rowCount || 0);
-    result.missingRows = Number(report.missingRows || 0);
-    result.subtitle = report.subtitle || "";
-    result.candidates = extractCandidates(app, report);
+    applyAttachedReport(result, app, report);
   } catch (error) {
-    result.error = error.message || String(error);
+    try {
+      const report = await readAttachedReportDirect(app);
+      applyAttachedReport(result, app, report);
+      result.error = "";
+    } catch (fallbackError) {
+      result.error = fallbackError.message || error.message || String(error);
+    }
   }
   return result;
+}
+
+function applyAttachedReport(result, app, report) {
+  result.status = "online";
+  result.latestPullDate = report.latestPullDate || "";
+  result.lastUpdatedAt = report.lastUpdatedAt || "";
+  result.rowCount = Number(report.settledRows || report.assignedRows || report.totalRows || 0);
+  result.filledRows = Number(report.filledRows || result.rowCount || 0);
+  result.missingRows = Number(report.missingRows || 0);
+  result.subtitle = report.subtitle || "";
+  result.candidates = extractCandidates(app, report);
+  if (!result.candidates.length && (app.id === "mlb-moneyline-start" || app.id === "mlb-yrfi-nrfi-3am")) {
+    result.candidates = extractDirectEngineCandidates(app, report);
+  }
+}
+
+async function readAttachedReportDirect(app) {
+  const moduleById = {
+    "mlb-moneyline-start": path.resolve(APP_DIR, "..", "kalshi-mlb-prestart-dataset", "src", "edge-engine.js"),
+    "mlb-yrfi-nrfi-3am": path.resolve(APP_DIR, "..", "yrfi-nrfi-logger-app", "src", "edge-engine.js")
+  };
+  const modulePath = moduleById[app.id];
+  if (!modulePath) throw new Error("No direct report fallback configured");
+  const mod = await import(pathToFileURL(modulePath).href);
+  return await mod.report();
 }
 
 function extractCandidates(app, report) {
@@ -424,13 +509,22 @@ function extractCandidates(app, report) {
     .sort(compareCandidates);
 }
 
+function extractDirectEngineCandidates(app, report) {
+  const primary = Array.isArray(report.analysis?.opportunities) ? report.analysis.opportunities : [];
+  return primary
+    .map((item) => normalizeCandidate(app, report, item))
+    .filter((item) => item && item.games >= MIN_GAMES && item.evPct > 0)
+    .map((item) => ({ ...item, score: opportunityScore(item) }))
+    .sort(compareCandidates);
+}
+
 function normalizeCandidate(app, report, item) {
   const games = Number(item.games || 0);
   const wins = Number(item.wins ?? parseRecord(item.record).wins);
   const losses = Number(item.losses ?? parseRecord(item.record).losses);
   const evPct = Number(item.evPct ?? item.yesEvPct ?? item.overEvPct ?? 0);
-  const weeklyEvPct = Number(item.weeklyEvDeltaPct || 0);
-  const monthlyEvPct = Number(item.monthlyEvDeltaPct || 0);
+  const weeklyEvPct = Number.isFinite(Number(item.weeklyEvDeltaPct)) ? Number(item.weeklyEvDeltaPct) : null;
+  const monthlyEvPct = Number.isFinite(Number(item.monthlyEvDeltaPct)) ? Number(item.monthlyEvDeltaPct) : null;
   const winsOverBreakEven = Number(item.winsOverBreakEven || 0);
   if (!Number.isFinite(games) || !Number.isFinite(evPct)) return null;
   return {
@@ -442,6 +536,11 @@ function normalizeCandidate(app, report, item) {
     latestPullDate: report.latestPullDate || "",
     label: item.displayLabel || item.label || item.pairLabel || item.key || "Unknown",
     pairLabel: item.pairLabel || item.label || "",
+    key: item.key || "",
+    bucket: item.bucket || "",
+    bucketMin: item.bucketMin ?? "",
+    avgPrice: item.avgPrice ?? "",
+    edgeSide: item.edgeSide || "",
     games,
     totalGames: Number(item.totalGames || report.settledRows || report.assignedRows || report.totalRows || 0),
     gamesLabel: item.gamesLabel || `${games}`,
@@ -462,7 +561,24 @@ function normalizeCandidate(app, report, item) {
 }
 
 function isActiveCandidate(item) {
-  return true;
+  return candidateEntryPriceCents(item) >= MIN_BUY_PRICE_CENTS;
+}
+
+function candidateEntryPriceCents(item = {}) {
+  const maxPrice = Number(item.maxPrice);
+  if (Number.isFinite(maxPrice)) return maxPrice;
+
+  const bucketMin = Number(item.bucketMin ?? item.yesBucketMin ?? item.noBucketMin);
+  if (Number.isFinite(bucketMin)) return bucketMin;
+
+  const text = String(item.label || item.pairLabel || item.key || item.bucket || "");
+  const exact = text.match(/<=\s*(\d+(?:\.\d+)?)c/i);
+  if (exact) return Number(exact[1]);
+
+  const bucket = text.match(/(?:^|\s)(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)(?:c)?\b/i);
+  if (bucket) return Number(bucket[1]);
+
+  return MIN_BUY_PRICE_CENTS;
 }
 
 function opportunityScore(item) {
@@ -470,8 +586,8 @@ function opportunityScore(item) {
   const sampleShare = item.totalGames ? Math.min(12, item.games / item.totalGames * 60) : 0;
   const edge = Math.max(-20, Math.min(30, item.evPct)) * 1.1;
   const breakEven = Math.max(-10, Math.min(20, item.winsOverBreakEven)) * 2.3;
-  const weekly = item.weeklyEvPct > 0 ? Math.min(12, item.weeklyEvPct / 2) : Math.max(-18, item.weeklyEvPct / 2);
-  const monthly = item.monthlyEvPct > 0 ? Math.min(14, item.monthlyEvPct / 2) : Math.max(-22, item.monthlyEvPct / 2);
+  const weekly = item.weeklyEvPct == null ? 0 : item.weeklyEvPct > 0 ? Math.min(12, item.weeklyEvPct / 2) : Math.max(-18, item.weeklyEvPct / 2);
+  const monthly = item.monthlyEvPct == null ? 0 : item.monthlyEvPct > 0 ? Math.min(14, item.monthlyEvPct / 2) : Math.max(-22, item.monthlyEvPct / 2);
   const currentPenalty = item.weeklyEvPct < 0 && item.monthlyEvPct < 0 ? -35 : 0;
   return sample + sampleShare + edge + breakEven + weekly + monthly + currentPenalty;
 }
@@ -531,6 +647,14 @@ async function readJson(req) {
 function parseRecord(record) {
   const match = String(record || "").match(/(\d+)\D+(\d+)/);
   return { wins: match ? Number(match[1]) : NaN, losses: match ? Number(match[2]) : NaN };
+}
+
+function countBy(items, picker) {
+  return items.reduce((acc, item) => {
+    const key = picker(item) || "unknown";
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, {});
 }
 
 function parseJsonArray(value) {

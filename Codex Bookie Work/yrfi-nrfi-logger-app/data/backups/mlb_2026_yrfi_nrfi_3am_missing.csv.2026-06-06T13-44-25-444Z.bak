@@ -1,0 +1,87 @@
+date,game_pk,game_number,match,reason,polymarket_event_slug
+2026-04-03,824786,1,San Diego Padres @ Boston Red Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-sd-bos-2026-04-03
+2026-04-04,825104,1,Atlanta Braves @ Arizona Diamondbacks,No historical price around 3am for one or both Yes/No tokens.,mlb-atl-ari-2026-04-04
+2026-04-04,823404,1,Baltimore Orioles @ Pittsburgh Pirates,No historical price around 3am for one or both Yes/No tokens.,mlb-bal-pit-2026-04-04
+2026-04-04,822920,1,Cincinnati Reds @ Texas Rangers,No historical price around 3am for one or both Yes/No tokens.,mlb-cin-tex-2026-04-04
+2026-04-04,825027,1,Houston Astros @ Athletics,No historical price around 3am for one or both Yes/No tokens.,mlb-hou-oak-2026-04-04
+2026-04-04,822757,1,Los Angeles Dodgers @ Washington Nationals,No historical price around 3am for one or both Yes/No tokens.,mlb-lad-wsh-2026-04-04
+2026-04-04,823569,1,Miami Marlins @ New York Yankees,No historical price around 3am for one or both Yes/No tokens.,mlb-mia-nyy-2026-04-04
+2026-04-04,824132,1,Milwaukee Brewers @ Kansas City Royals,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-04,824134,2,Milwaukee Brewers @ Kansas City Royals,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-04,823239,1,New York Mets @ San Francisco Giants,No historical price around 3am for one or both Yes/No tokens.,mlb-nym-sf-2026-04-04
+2026-04-04,824378,1,Philadelphia Phillies @ Colorado Rockies,No historical price around 3am for one or both Yes/No tokens.,mlb-phi-col-2026-04-04
+2026-04-04,824782,1,San Diego Padres @ Boston Red Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-sd-bos-2026-04-04
+2026-04-04,824054,1,Seattle Mariners @ Los Angeles Angels,No historical price around 3am for one or both Yes/No tokens.,mlb-sea-laa-2026-04-04
+2026-04-04,824295,1,St. Louis Cardinals @ Detroit Tigers,MLB game is not final yet.,
+2026-04-04,823730,1,Tampa Bay Rays @ Minnesota Twins,No historical price around 3am for one or both Yes/No tokens.,mlb-tb-min-2026-04-04
+2026-04-04,824622,1,Toronto Blue Jays @ Chicago White Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-tor-cws-2026-04-04
+2026-04-05,825102,1,Atlanta Braves @ Arizona Diamondbacks,No historical price around 3am for one or both Yes/No tokens.,mlb-atl-ari-2026-04-05
+2026-04-05,823405,1,Baltimore Orioles @ Pittsburgh Pirates,No historical price around 3am for one or both Yes/No tokens.,mlb-bal-pit-2026-04-05
+2026-04-05,824459,1,Chicago Cubs @ Cleveland Guardians,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-05,824460,2,Chicago Cubs @ Cleveland Guardians,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-05,822917,1,Cincinnati Reds @ Texas Rangers,No historical price around 3am for one or both Yes/No tokens.,mlb-cin-tex-2026-04-05
+2026-04-05,825025,1,Houston Astros @ Athletics,No historical price around 3am for one or both Yes/No tokens.,mlb-hou-oak-2026-04-05
+2026-04-05,822756,1,Los Angeles Dodgers @ Washington Nationals,No historical price around 3am for one or both Yes/No tokens.,mlb-lad-wsh-2026-04-05
+2026-04-05,823566,1,Miami Marlins @ New York Yankees,No historical price around 3am for one or both Yes/No tokens.,mlb-mia-nyy-2026-04-05
+2026-04-05,824131,1,Milwaukee Brewers @ Kansas City Royals,No historical price around 3am for one or both Yes/No tokens.,mlb-mil-kc-2026-04-05
+2026-04-05,823238,1,New York Mets @ San Francisco Giants,No historical price around 3am for one or both Yes/No tokens.,mlb-nym-sf-2026-04-05
+2026-04-05,824379,1,Philadelphia Phillies @ Colorado Rockies,No historical price around 3am for one or both Yes/No tokens.,mlb-phi-col-2026-04-05
+2026-04-05,824781,1,San Diego Padres @ Boston Red Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-sd-bos-2026-04-05
+2026-04-05,824053,1,Seattle Mariners @ Los Angeles Angels,No historical price around 3am for one or both Yes/No tokens.,mlb-sea-laa-2026-04-05
+2026-04-05,824296,1,St. Louis Cardinals @ Detroit Tigers,No historical price around 3am for one or both Yes/No tokens.,mlb-stl-det-2026-04-05
+2026-04-05,823729,1,Tampa Bay Rays @ Minnesota Twins,No historical price around 3am for one or both Yes/No tokens.,mlb-tb-min-2026-04-05
+2026-04-05,824620,1,Toronto Blue Jays @ Chicago White Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-tor-cws-2026-04-05
+2026-04-06,824052,1,Atlanta Braves @ Los Angeles Angels,No historical price around 3am for one or both Yes/No tokens.,mlb-atl-laa-2026-04-06
+2026-04-06,824619,1,Baltimore Orioles @ Chicago White Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-bal-cws-2026-04-06
+2026-04-06,823002,1,Chicago Cubs @ Tampa Bay Rays,No historical price around 3am for one or both Yes/No tokens.,mlb-chc-tb-2026-04-06
+2026-04-06,823886,1,Cincinnati Reds @ Miami Marlins,No historical price around 3am for one or both Yes/No tokens.,mlb-cin-mia-2026-04-06
+2026-04-06,823728,1,Detroit Tigers @ Minnesota Twins,No historical price around 3am for one or both Yes/No tokens.,mlb-det-min-2026-04-06
+2026-04-06,824376,1,Houston Astros @ Colorado Rockies,No historical price around 3am for one or both Yes/No tokens.,mlb-hou-col-2026-04-06
+2026-04-06,824456,1,Kansas City Royals @ Cleveland Guardians,No historical price around 3am for one or both Yes/No tokens.,mlb-kc-cle-2026-04-06
+2026-04-06,822832,1,Los Angeles Dodgers @ Toronto Blue Jays,No historical price around 3am for one or both Yes/No tokens.,mlb-lad-tor-2026-04-06
+2026-04-06,824783,1,Milwaukee Brewers @ Boston Red Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-mil-bos-2026-04-06
+2026-04-06,823237,1,Philadelphia Phillies @ San Francisco Giants,No historical price around 3am for one or both Yes/No tokens.,mlb-phi-sf-2026-04-06
+2026-04-06,823401,1,San Diego Padres @ Pittsburgh Pirates,No historical price around 3am for one or both Yes/No tokens.,mlb-sd-pit-2026-04-06
+2026-04-06,822918,1,Seattle Mariners @ Texas Rangers,No historical price around 3am for one or both Yes/No tokens.,mlb-sea-tex-2026-04-06
+2026-04-06,822755,1,St. Louis Cardinals @ Washington Nationals,No historical price around 3am for one or both Yes/No tokens.,mlb-stl-wsh-2026-04-06
+2026-04-07,823648,1,Arizona Diamondbacks @ New York Mets,No historical price around 3am for one or both Yes/No tokens.,mlb-ari-nym-2026-04-07
+2026-04-07,823567,1,Athletics @ New York Yankees,No historical price around 3am for one or both Yes/No tokens.,mlb-oak-nyy-2026-04-07
+2026-04-07,824051,1,Atlanta Braves @ Los Angeles Angels,No historical price around 3am for one or both Yes/No tokens.,mlb-atl-laa-2026-04-07
+2026-04-07,824618,1,Baltimore Orioles @ Chicago White Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-bal-cws-2026-04-07
+2026-04-07,822999,1,Chicago Cubs @ Tampa Bay Rays,No historical price around 3am for one or both Yes/No tokens.,mlb-chc-tb-2026-04-07
+2026-04-07,823887,1,Cincinnati Reds @ Miami Marlins,No historical price around 3am for one or both Yes/No tokens.,mlb-cin-mia-2026-04-07
+2026-04-07,823727,1,Detroit Tigers @ Minnesota Twins,No historical price around 3am for one or both Yes/No tokens.,mlb-det-min-2026-04-07
+2026-04-07,824375,1,Houston Astros @ Colorado Rockies,No historical price around 3am for one or both Yes/No tokens.,mlb-hou-col-2026-04-07
+2026-04-07,824457,1,Kansas City Royals @ Cleveland Guardians,No historical price around 3am for one or both Yes/No tokens.,mlb-kc-cle-2026-04-07
+2026-04-07,822831,1,Los Angeles Dodgers @ Toronto Blue Jays,No historical price around 3am for one or both Yes/No tokens.,mlb-lad-tor-2026-04-07
+2026-04-07,824780,1,Milwaukee Brewers @ Boston Red Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-mil-bos-2026-04-07
+2026-04-07,823235,1,Philadelphia Phillies @ San Francisco Giants,No historical price around 3am for one or both Yes/No tokens.,mlb-phi-sf-2026-04-07
+2026-04-07,823402,1,San Diego Padres @ Pittsburgh Pirates,No historical price around 3am for one or both Yes/No tokens.,mlb-sd-pit-2026-04-07
+2026-04-07,822916,1,Seattle Mariners @ Texas Rangers,No historical price around 3am for one or both Yes/No tokens.,mlb-sea-tex-2026-04-07
+2026-04-07,822754,1,St. Louis Cardinals @ Washington Nationals,No historical price around 3am for one or both Yes/No tokens.,mlb-stl-wsh-2026-04-07
+2026-04-08,823646,1,Arizona Diamondbacks @ New York Mets,No historical price around 3am for one or both Yes/No tokens.,mlb-ari-nym-2026-04-08
+2026-04-08,823564,1,Athletics @ New York Yankees,No historical price around 3am for one or both Yes/No tokens.,mlb-oak-nyy-2026-04-08
+2026-04-08,824050,1,Atlanta Braves @ Los Angeles Angels,No historical price around 3am for one or both Yes/No tokens.,mlb-atl-laa-2026-04-08
+2026-04-08,824617,1,Baltimore Orioles @ Chicago White Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-bal-cws-2026-04-08
+2026-04-08,823000,1,Chicago Cubs @ Tampa Bay Rays,No historical price around 3am for one or both Yes/No tokens.,mlb-chc-tb-2026-04-08
+2026-04-08,823885,1,Cincinnati Reds @ Miami Marlins,No historical price around 3am for one or both Yes/No tokens.,mlb-cin-mia-2026-04-08
+2026-04-08,823726,1,Detroit Tigers @ Minnesota Twins,No historical price around 3am for one or both Yes/No tokens.,mlb-det-min-2026-04-08
+2026-04-08,824374,1,Houston Astros @ Colorado Rockies,No historical price around 3am for one or both Yes/No tokens.,mlb-hou-col-2026-04-08
+2026-04-08,824455,1,Kansas City Royals @ Cleveland Guardians,No historical price around 3am for one or both Yes/No tokens.,mlb-kc-cle-2026-04-08
+2026-04-08,822833,1,Los Angeles Dodgers @ Toronto Blue Jays,No historical price around 3am for one or both Yes/No tokens.,mlb-lad-tor-2026-04-08
+2026-04-08,824779,1,Milwaukee Brewers @ Boston Red Sox,No historical price around 3am for one or both Yes/No tokens.,mlb-mil-bos-2026-04-08
+2026-04-08,823234,1,Philadelphia Phillies @ San Francisco Giants,No historical price around 3am for one or both Yes/No tokens.,mlb-phi-sf-2026-04-08
+2026-04-08,823403,1,San Diego Padres @ Pittsburgh Pirates,No historical price around 3am for one or both Yes/No tokens.,mlb-sd-pit-2026-04-08
+2026-04-08,822915,1,Seattle Mariners @ Texas Rangers,No historical price around 3am for one or both Yes/No tokens.,mlb-sea-tex-2026-04-08
+2026-04-08,822753,1,St. Louis Cardinals @ Washington Nationals,No historical price around 3am for one or both Yes/No tokens.,mlb-stl-wsh-2026-04-08
+2026-04-26,823635,1,Colorado Rockies @ New York Mets,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-26,823637,2,Colorado Rockies @ New York Mets,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-30,824848,1,Houston Astros @ Baltimore Orioles,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-30,824850,2,Houston Astros @ Baltimore Orioles,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-30,823472,1,San Francisco Giants @ Philadelphia Phillies,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-04-30,823471,2,San Francisco Giants @ Philadelphia Phillies,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-05-07,824362,1,New York Mets @ Colorado Rockies,No matching Polymarket YRFI/NRFI market found.,
+2026-05-23,824518,1,St. Louis Cardinals @ Cincinnati Reds,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-05-23,824516,2,St. Louis Cardinals @ Cincinnati Reds,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-05-24,824839,1,Detroit Tigers @ Baltimore Orioles,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,
+2026-05-24,824840,2,Detroit Tigers @ Baltimore Orioles,Ambiguous duplicate MLB matchup on same date; skipped because the Polymarket event slug does not uniquely identify game number.,

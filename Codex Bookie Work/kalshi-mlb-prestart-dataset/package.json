@@ -1,0 +1,10 @@
+{
+  "name": "polymarket-mlb-prestart-dataset",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/fill-polymarket-moneyline-missing.js --rebuild=1",
+    "start": "node src/server.js"
+  }
+}

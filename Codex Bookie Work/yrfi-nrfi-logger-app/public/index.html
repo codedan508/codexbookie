@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex Bookie YRFI/NRFI Logger</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <h1 id="sportTitle">MLB</h1>
+        <p id="marketSubtitle">YRFI / NRFI</p>
+      </div>
+      <button id="getData" class="get-data" type="button">Get Data</button>
+    </header>
+
+    <section class="summary">
+      <div>
+        <span>Total EV</span>
+        <strong id="totalEv">--</strong>
+      </div>
+      <div>
+        <span>Positive Buckets</span>
+        <strong id="positiveBuckets">--</strong>
+      </div>
+      <div>
+        <span>Settled Games</span>
+        <strong id="settledRows">--</strong>
+      </div>
+      <div>
+        <span>Latest Pull</span>
+        <strong id="latestPull">--</strong>
+      </div>
+    </section>
+
+    <section class="reporting">
+      <div class="section-head">
+        <h2>Reporting</h2>
+        <div class="report-actions">
+          <span id="rowCount">Loading</span>
+          <a class="export" href="/api/export.csv">Generate CSV</a>
+        </div>
+      </div>
+      <div id="bucketRows" class="bucket-list"></div>
+    </section>
+
+    <section class="reporting secondary">
+      <div class="section-head">
+        <h2>Analysis</h2>
+      </div>
+      <div id="analysisRows" class="analysis-grid"></div>
+    </section>
+
+    <section class="reporting secondary">
+      <div class="section-head">
+        <h2>Data Pulls</h2>
+      </div>
+      <pre id="updateLog">No data pulls yet.</pre>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>

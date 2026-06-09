@@ -7,7 +7,7 @@ import { fetchAccountSnapshot, fetchMlbSlateForDate, normalizeSettings, offerFou
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(__dirname, "..", "public");
 const port = Number(process.env.PORT || 2010);
-const commandCenterBase = process.env.COMMAND_CENTER_BASE || "http://127.0.0.1:2040";
+const commandCenterBase = process.env.COMMAND_CENTER_BASE || "http://localhost:2040";
 
 const server = http.createServer(async (req, res) => {
   try {

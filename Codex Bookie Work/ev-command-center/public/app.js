@@ -41,15 +41,17 @@ async function runGetDataAll() {
 async function runMatchingBets() {
   setBusy(true, "Scanning...");
   lastFoundMatches = [];
-  els.matchCount.textContent = "Scanning current MLB lines...";
-  els.matchGrid.innerHTML = `<p class="empty">Checking current MLB markets.</p>`;
+  if (els.matchCount) els.matchCount.textContent = "Scanning current MLB lines...";
+  if (els.matchGrid) els.matchGrid.innerHTML = `<p class="empty">Checking current MLB markets.</p>`;
   try {
     const data = await fetchJson("/api/matching-bets", { method: "POST" });
     lastFoundMatches = data.matches || [];
-    els.matchCount.textContent = formatMatchStatus(data);
-    els.matchGrid.innerHTML = data.matches.length
-      ? renderMatchGroups(data.matches)
-      : `<p class="empty">No current MLB lines match the source list right now.</p>`;
+    if (els.matchCount) els.matchCount.textContent = formatMatchStatus(data);
+    if (els.matchGrid) {
+      els.matchGrid.innerHTML = data.matches.length
+        ? renderMatchGroups(data.matches)
+        : `<p class="empty">No current MLB lines match the source list right now.</p>`;
+    }
     reloadBookieFrame();
   } finally {
     setBusy(false);
@@ -76,13 +78,16 @@ function renderDashboard(data) {
 }
 
 function renderBestLine(item) {
+  const recent = [
+    Number.isFinite(Number(item.weeklyEvPct)) ? `<span class="${tone(item.weeklyEvPct)}">week ${formatSigned(item.weeklyEvPct)}</span>` : "",
+    Number.isFinite(Number(item.monthlyEvPct)) ? `<span class="${tone(item.monthlyEvPct)}">month ${formatSigned(item.monthlyEvPct)}</span>` : ""
+  ].join("");
   return `
     <p class="source-line">
       <b>${escapeHtml(item.label)}</b>
       <span>${escapeHtml(item.appName)} · ${escapeHtml(item.gamesLabel || `${item.games}`)} · ${escapeHtml(record(item))}</span>
-      <span class="${tone(item.evPct)}">${formatSigned(item.evPct)} EV</span>
-      <span class="${tone(item.weeklyEvPct)}">week ${formatSigned(item.weeklyEvPct)}</span>
-      <span class="${tone(item.monthlyEvPct)}">month ${formatSigned(item.monthlyEvPct)}</span>
+      <span class="${tone(item.evPct)}">annual ${formatSigned(item.evPct)} EV</span>
+      ${recent}
     </p>
   `;
 }
@@ -184,7 +189,7 @@ function cleanError(error) {
 
 function reloadBookieFrame() {
   if (!els.bookieFrame) return;
-  els.bookieFrame.src = `http://127.0.0.1:2010/?t=${Date.now()}`;
+  els.bookieFrame.src = `http://localhost:2010/?t=${Date.now()}`;
 }
 
 function record(item) {

@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const APP_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const STATE_PATH = path.join(APP_DIR, "orders-state.json");
+const MIN_BUY_PRICE_CENTS = 30;
 const LOG_DIR = path.join(APP_DIR, "logs");
 const GATEWAY_BASE = "https://gateway.polymarket.us";
 const TRADE_BASE = "https://api.polymarket.us";
@@ -258,7 +259,7 @@ export async function offerFoundBets(matches = [], reason = "found-bets-ui") {
   for (const [index, match] of cleanMatches.entries()) {
     const marketSlug = String(match?.marketSlug || "").trim();
     const foundPrice = Math.floor(Number(match?.price));
-    if (!marketSlug || !isTrustedFoundMatch(match) || !Number.isFinite(foundPrice) || foundPrice < 1 || foundPrice > 99) {
+    if (!marketSlug || !isTrustedFoundMatch(match) || !Number.isFinite(foundPrice) || foundPrice < MIN_BUY_PRICE_CENTS || foundPrice > 99) {
       skipped.push({ marketSlug, reason: "invalid_found_bet", match });
       continue;
     }
@@ -289,6 +290,10 @@ export async function offerFoundBets(matches = [], reason = "found-bets-ui") {
     }
     if (!priceInFoundBucket(currentBidCents, bucket)) {
       skipped.push({ marketSlug, reason: "live_bid_moved_out_of_found_bucket", foundPrice, currentBidCents, bucket, match });
+      continue;
+    }
+    if (currentBidCents < MIN_BUY_PRICE_CENTS) {
+      skipped.push({ marketSlug, reason: "live_bid_under_30c_minimum", foundPrice, currentBidCents, match });
       continue;
     }
     const makerBidCents = currentBidCents;
@@ -425,7 +430,7 @@ export async function validateFoundMatches(matches = [], options = {}) {
   for (const match of cleanMatches) {
     const marketSlug = String(match?.marketSlug || "").trim();
     const foundPrice = Math.floor(Number(match?.price));
-    if (!marketSlug || !isTrustedFoundMatch(match) || !Number.isFinite(foundPrice) || foundPrice < 1 || foundPrice > 99) {
+    if (!marketSlug || !isTrustedFoundMatch(match) || !Number.isFinite(foundPrice) || foundPrice < MIN_BUY_PRICE_CENTS || foundPrice > 99) {
       skipped.push({ marketSlug, reason: "invalid_found_bet", match });
       continue;
     }

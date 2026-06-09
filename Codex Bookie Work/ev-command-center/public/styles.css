@@ -350,10 +350,11 @@ dd {
 .maker-frame {
   display: block;
   width: 100%;
-  height: 1080px;
+  height: 1500px;
   border: 1px solid var(--line-soft);
   border-radius: 6px;
   background: #020305;
+  overflow: hidden;
 }
 
 .attached-panel {

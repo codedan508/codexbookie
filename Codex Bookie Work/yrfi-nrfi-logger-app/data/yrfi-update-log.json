@@ -1,0 +1,167 @@
+[
+  {
+    "ranAt": "2026-06-08T23:23:49.119Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:20:50.376Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:08:54.097Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:08:04.666Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:08:04.094Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:08:03.362Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:08:02.745Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T23:07:59.644Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T22:24:46.755Z",
+    "status": "completed",
+    "message": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "rowsBefore": 963,
+    "rowsAfter": 963,
+    "rowsAdded": 0,
+    "missingRows": 15,
+    "stdout": "No new MLB YRFI/NRFI dates to append. Latest stored date 2026-06-07; latest completed date 2026-06-07. Ledger rows preserved: 963.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-08T21:55:04.826Z",
+    "status": "completed",
+    "message": "Done. Preserved existing ledger. Added rows: 29. Added missing audit rows: 0. Ledger rows: 963. Missing audit rows: 15.",
+    "rowsBefore": 934,
+    "rowsAfter": 963,
+    "rowsAdded": 29,
+    "missingRows": 15,
+    "stdout": "Appending MLB 2026 YRFI/NRFI 3am ET dataset: 2026-06-06 through 2026-06-07\n2026-06-06: 14/14 new rows added\n2026-06-07: 15/15 new rows added\nDone. Preserved existing ledger. Added rows: 29. Added missing audit rows: 0. Ledger rows: 963. Missing audit rows: 15.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-06T13:44:20.603Z",
+    "status": "completed",
+    "message": "Done. Preserved existing ledger. Added rows: 15. Added missing audit rows: 0. Ledger rows: 863. Missing audit rows: 86.",
+    "rowsBefore": 848,
+    "rowsAfter": 863,
+    "rowsAdded": 15,
+    "missingRows": 86,
+    "stdout": "Appending MLB 2026 YRFI/NRFI 3am ET dataset: 2026-06-05 through 2026-06-05\n2026-06-05: 15/15 new rows added\nDone. Preserved existing ledger. Added rows: 15. Added missing audit rows: 0. Ledger rows: 863. Missing audit rows: 86.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T18:55:46.828Z",
+    "status": "completed",
+    "message": "Done. Preserved existing ledger. Added rows: 9. Added missing audit rows: 0. Ledger rows: 848. Missing audit rows: 86.",
+    "rowsBefore": 839,
+    "rowsAfter": 848,
+    "rowsAdded": 9,
+    "missingRows": 86,
+    "stdout": "Appending MLB 2026 YRFI/NRFI 3am ET dataset: 2026-06-04 through 2026-06-04\n2026-06-04: 9/9 new rows added\nDone. Preserved existing ledger. Added rows: 9. Added missing audit rows: 0. Ledger rows: 848. Missing audit rows: 86.",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-05T00:27:42.987Z",
+    "status": "completed",
+    "message": "Wrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_missing.csv",
+    "rowsBefore": 839,
+    "rowsAfter": 839,
+    "rowsAdded": 0,
+    "missingRows": 86,
+    "stdout": "2026-05-28: 6/6 rows added\n2026-05-29: 15/15 rows added\n2026-05-30: 15/15 rows added\n2026-05-31: 15/15 rows added\n2026-06-01: 9/9 rows added\n2026-06-02: 15/15 rows added\n2026-06-03: 15/15 rows added\nDone. Ledger rows: 839. Missing audit rows: 86. Summary buckets: 7.\nEV positive buckets: 7. EV negative buckets: 0.\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_game_ledger.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_bucket_ev_summary.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_missing.csv",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-04T05:43:40.737Z",
+    "status": "completed",
+    "message": "Wrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_missing.csv",
+    "rowsBefore": 824,
+    "rowsAfter": 839,
+    "rowsAdded": 15,
+    "missingRows": 86,
+    "stdout": "2026-05-28: 6/6 rows added\n2026-05-29: 15/15 rows added\n2026-05-30: 15/15 rows added\n2026-05-31: 15/15 rows added\n2026-06-01: 9/9 rows added\n2026-06-02: 15/15 rows added\n2026-06-03: 15/15 rows added\nDone. Ledger rows: 839. Missing audit rows: 86. Summary buckets: 7.\nEV positive buckets: 7. EV negative buckets: 0.\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_game_ledger.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_bucket_ev_summary.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_missing.csv",
+    "stderr": ""
+  },
+  {
+    "ranAt": "2026-06-04T02:33:29.327Z",
+    "status": "completed",
+    "message": "Wrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_missing.csv",
+    "rowsBefore": 821,
+    "rowsAfter": 824,
+    "rowsAdded": 3,
+    "missingRows": 86,
+    "stdout": "2026-05-27: 15/15 rows added\n2026-05-28: 6/6 rows added\n2026-05-29: 15/15 rows added\n2026-05-30: 15/15 rows added\n2026-05-31: 15/15 rows added\n2026-06-01: 9/9 rows added\n2026-06-02: 15/15 rows added\nDone. Ledger rows: 824. Missing audit rows: 86. Summary buckets: 7.\nEV positive buckets: 7. EV negative buckets: 0.\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_game_ledger.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_bucket_ev_summary.csv\nWrote /Users/dan/Documents/OCD Treatment Center/Codex Bookie Work/yrfi-nrfi-logger-app/data/mlb_2026_yrfi_nrfi_3am_missing.csv",
+    "stderr": ""
+  }
+]
